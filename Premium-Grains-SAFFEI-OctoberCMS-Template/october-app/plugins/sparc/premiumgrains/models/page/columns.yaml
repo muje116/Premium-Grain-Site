@@ -1,0 +1,17 @@
+columns:
+    label:
+        label: Page
+        searchable: true
+        sortable: true
+    code:
+        label: Code
+        searchable: true
+        sortable: true
+    is_active:
+        label: Published
+        type: switch
+        sortable: true
+    sort_order:
+        label: Order
+        type: number
+        sortable: true

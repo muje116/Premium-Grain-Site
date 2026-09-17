@@ -1,0 +1,22 @@
+<header class="site-header{% if this.page.id != 'home' %} site-header-solid{% endif %}" data-header>
+  <div class="container nav-wrap">
+    <a class="brand" href="{{ 'home'|page }}" aria-label="{{ site.brand_name|default('Premium Grains') }} home"><img src="{{ 'assets/images/brand-lockup.png'|theme }}" alt="{{ site.brand_name|default('Premium Grains') }} {{ site.brand_descriptor|default('SAFFEI Project') }}"></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="{{ 'about'|page }}">About</a>
+      <a href="{{ 'model'|page }}">Our model</a>
+      <a href="{{ 'saffei'|page }}">SAFFEI</a>
+      <a href="{{ 'hubs'|page }}">Farm hubs</a>
+      <a href="{{ 'journey'|page }}">Journey</a>
+    </nav>
+    <a class="button button-small desktop-cta" href="{{ 'partner'|page }}">Partner with us <span aria-hidden="true">↗</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+  <nav class="mobile-nav" id="mobile-menu" aria-label="Mobile navigation">
+    <a href="{{ 'about'|page }}">About</a>
+    <a href="{{ 'model'|page }}">Our model</a>
+    <a href="{{ 'saffei'|page }}">SAFFEI</a>
+    <a href="{{ 'hubs'|page }}">Farm hubs</a>
+    <a href="{{ 'journey'|page }}">Journey</a>
+    <a href="{{ 'partner'|page }}">Partner with us</a>
+  </nav>
+</header>

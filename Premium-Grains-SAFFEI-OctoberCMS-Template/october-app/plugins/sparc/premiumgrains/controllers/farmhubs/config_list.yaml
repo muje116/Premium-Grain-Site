@@ -1,0 +1,15 @@
+title: Farm hubs
+list: ~/plugins/sparc/premiumgrains/models/farmhub/columns.yaml
+modelClass: Sparc\PremiumGrains\Models\FarmHub
+recordUrl: sparc/premiumgrains/farmhubs/update/:id
+noRecordsMessage: backend::lang.list.no_records
+recordsPerPage: 30
+showSetup: true
+showCheckboxes: true
+defaultSort:
+    column: sort_order
+    direction: asc
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: Search farm hubs

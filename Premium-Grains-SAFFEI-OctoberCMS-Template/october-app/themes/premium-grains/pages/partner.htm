@@ -1,0 +1,27 @@
+title = "Partner with us"
+url = "/partner"
+layout = "default"
+meta_title = "Partner with Premium Grains | Premium Grains x SAFFEI"
+meta_description = "Partner with Premium Grains and SAFFEI to connect organised farmers, field presence and dependable agricultural demand."
+is_hidden = 0
+
+[premiumContent]
+pageCode = "partner"
+==
+<section class="page-hero page-hero-mist">
+  <div class="container page-hero-grid">
+    <div><p class="eyebrow orange">{{ pageContent.kicker }}</p><h1>{{ pageContent.title }}</h1><p class="page-lede">{{ pageContent.intro }}</p></div>
+    <div class="page-stamp"><span>06</span><strong>Shared<br>value,<br>built together</strong><small>Premium Grains x SAFFEI</small></div>
+  </div>
+</section>
+
+<section class="section partner-detail">
+  <div class="container partner-detail-intro"><div><p class="eyebrow">Why partner with us?</p><h2>A practical bridge between community-level implementation and commercial agricultural demand.</h2></div><div class="prose"><p>Premium Grains brings together a functioning commercial route, practical field presence and an organised farmer structure.</p><p>That combination helps partners move from intent to implementation, with a clearer path from farmer effort to reliable supply and shared value.</p></div></div>
+  <div class="container partner-detail-grid">
+    {% for point in partnerPoints %}<article><span>{{ '%02d'|format(point.number) }}</span><h3>{{ point.title }}</h3><p>{{ point.body }}</p></article>{% endfor %}
+  </div>
+</section>
+
+<section class="section contact-panel"><div class="container contact-panel-inner"><div><p class="eyebrow light">Start a conversation</p><h2>Let us grow value together.</h2><p>Tell us what you are building and where you see a useful connection.</p></div><a class="button button-large" href="mailto:{{ site.partnership_email }}">{{ site.partnership_email }} <span aria-hidden="true">↗</span></a></div></section>
+
+<section class="section partner-locations"><div class="container locations-grid"><div><p class="eyebrow orange">On the ground</p><h2>Rooted in Malawi.</h2></div><div class="locations-list"><div><span>01</span><strong>{{ site.location_one }}</strong></div><div><span>02</span><strong>{{ site.location_two }}</strong></div><div><span>03</span><strong>{{ site.location_country }}</strong></div></div></div></section>

@@ -1,0 +1,18 @@
+columns:
+    name:
+        label: Hub
+        searchable: true
+        sortable: true
+    location:
+        label: Location
+        searchable: true
+    metric_value:
+        label: Metric
+        sortable: true
+    descriptor:
+        label: Descriptor
+        searchable: true
+    is_active:
+        label: Published
+        type: switch
+        sortable: true

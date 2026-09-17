@@ -1,0 +1,130 @@
+title = "Home"
+url = "/"
+layout = "default"
+meta_title = "Premium Grains x SAFFEI | Growing value"
+meta_description = "Premium Grains and SAFFEI connect climate-smart production, farmer support and reliable agricultural markets across Malawi."
+is_hidden = 0
+
+[premiumContent]
+pageCode = "home"
+==
+<section class="hero" id="top">
+  {% if site.hero_image and site.hero_image starts with 'assets/' %}
+    <img class="hero-image" src="{{ site.hero_image|theme }}" alt="Farmer overlooking a thriving maize field in Malawi">
+  {% elseif site.hero_image %}
+    <img class="hero-image" src="{{ site.hero_image|media }}" alt="Farmer overlooking a thriving maize field in Malawi">
+  {% else %}
+    <img class="hero-image" src="{{ 'assets/images/hero-farmer.png'|theme }}" alt="Farmer overlooking a thriving maize field in Malawi">
+  {% endif %}
+  <div class="hero-shade"></div>
+  <div class="container hero-content">
+    <p class="eyebrow light">{{ pageContent.kicker|default('Premium Grains x SAFFEI') }}</p>
+    <h1>{{ pageContent.title|default('Growing value.\nStrengthening farmers.')|nl2br }}</h1>
+    <p class="hero-copy">{{ pageContent.intro|default('A modern Malawian agribusiness rooted in production, dependable markets and stronger livelihoods.') }}</p>
+    <div class="hero-actions">
+      <a class="button" href="{{ site.hero_cta_url|default('/our-model') }}">{{ site.hero_cta_label|default('Explore our model') }} <span aria-hidden="true">↓</span></a>
+      <a class="text-link light-link" href="{{ 'partner'|page }}">Work with us <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <div class="container hero-foot">
+    <span>{{ site.location_one|default('Kasiya, Lilongwe') }}</span>
+    <span>{{ site.location_two|default('Mpherembe, Mzimba') }}</span>
+    <strong>{{ site.motto|default('Tilime. Tikolole. Titukuke.') }}</strong>
+  </div>
+</section>
+
+<section class="section intro" id="about">
+  <div class="container split-heading">
+    <div>
+      <p class="eyebrow">{{ pages.about.kicker|default('Who we are') }}</p>
+      <h2>{{ pages.about.title|default('Building the path from field to market.') }}</h2>
+    </div>
+    <div class="intro-copy">
+      <p>{{ pages.about.intro|default('Premium Grains Ltd works with farmers, cooperatives, buyers and partners to strengthen supply, improve quality and create sustainable income across agricultural value chains.') }}</p>
+      <p>{{ site.purpose|default('Our purpose is to grow a resilient food and commodity business that gives farmers practical support, dependable markets and opportunities to earn and thrive.') }}</p>
+    </div>
+  </div>
+  <div class="container pillars">
+    {% for principle in principles %}
+      <article>
+        <span>{{ '%02d'|format(principle.number) }}</span>
+        <h3>{{ principle.title }}</h3>
+        <p>{{ principle.body }}</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section model" id="model">
+  <div class="container">
+    <div class="section-head">
+      <div><p class="eyebrow orange">{{ pages.model.kicker|default('Integrated agribusiness') }}</p><h2>{{ pages.model.title|default('From the field to the market') }}</h2></div>
+      <p>{{ pages.model.intro|default('Commercial discipline and farmer development, working as one connected cycle.') }}</p>
+    </div>
+    <div class="model-track">
+      {% for step in modelSteps %}
+        <article>
+          <b>{{ '%02d'|format(step.number) }}</b>
+          <span class="model-icon">{{ step.short_code|default(step.title|slice(0, 1)) }}</span>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.body }}</p>
+        </article>
+      {% endfor %}
+    </div>
+    <a class="inline-link" href="{{ 'model'|page }}">Explore the full model <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+
+<section class="section saffei" id="saffei">
+  <div class="container saffei-grid">
+    <div class="saffei-lead">
+      <p class="eyebrow light">{{ pages.saffei.kicker|default('The social enterprise arm') }}</p>
+      <h2>{{ pages.saffei.title|default('Meet SAFFEI') }}</h2>
+      <p class="long-name">{{ site.saffei_name|default('Sustainable Agriculture and Financial Empowerment Initiative') }}</p>
+      <p>{{ pages.saffei.intro|default("SAFFEI connects agricultural production with financial resilience, conservation and structured off-take so farming becomes a stronger, more sustainable livelihood.") }}</p>
+      <div class="motto"><span>Grow.</span><span>Harvest.</span><span>Prosper.</span></div>
+      <a class="text-link light-link" href="{{ 'saffei'|page }}">Discover SAFFEI <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="saffei-cards">
+      {% for focus in saffeiFocus %}
+        <article><b>{{ '%02d'|format(focus.number) }}</b><h3>{{ focus.title }}</h3><p>{{ focus.body }}</p></article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section hubs" id="hubs">
+  <div class="container">
+    <div class="section-head"><div><p class="eyebrow">{{ pages.hubs.kicker|default('Where the model comes alive') }}</p><h2>{{ pages.hubs.title|default('Our farm hubs') }}</h2></div><p>{{ pages.hubs.intro|default('Kasiya and Mpherembe anchor production, demonstration, farmer learning and partnership activation.') }}</p></div>
+    <div class="hub-grid">
+      {% for hub in farmHubs %}
+        <article class="hub-card {{ hub.accent == 'inverse' ? 'inverse' : '' }}">
+          <div class="hub-top"><span>{{ hub.location }}</span><strong>{{ hub.metric_value }}</strong></div>
+          <h3>{{ hub.name }}</h3>
+          <p>{{ hub.descriptor }}</p>
+          <ul>{% for point in hub.points_list %}<li>{{ point }}</li>{% endfor %}</ul>
+          <span class="card-foot">Produce · Learn · Scale</span>
+        </article>
+      {% endfor %}
+    </div>
+    <a class="inline-link" href="{{ 'hubs'|page }}">See both farm hubs <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+
+<section class="section journey" id="journey">
+  <div class="container journey-grid">
+    <div class="journey-title"><p class="eyebrow orange">{{ pages.journey.kicker|default('Designed around farmers') }}</p><h2>{{ pages.journey.title|default('The SAFFEI journey') }}</h2><p>{{ pages.journey.intro|default('A disciplined cycle that begins with organisation and ends with income, learning and reinvestment.') }}</p><div class="result"><span>The result</span><strong>Better organised farmers.<br>Better quality.<br>Stronger market readiness.</strong></div></div>
+    <ol class="steps">
+      {% for step in journeySteps %}
+        <li><span>{{ '%02d'|format(step.number) }}</span><div><h3>{{ step.title }}</h3><p>{{ step.body }}</p></div></li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section partner" id="partner">
+  <div class="container partner-panel">
+    <div><p class="eyebrow light">{{ pages.partner.kicker|default('Built for collaboration') }}</p><h2>{{ pages.partner.title|default('Let us grow value together.') }}</h2><p>{{ pages.partner.intro|default('We offer a practical bridge between community-level implementation and commercial agricultural demand.') }}</p><a class="button" href="{{ 'partner'|page }}">Start a conversation <span aria-hidden="true">↗</span></a></div>
+    <div class="partner-points">{% for point in partnerPoints %}<article><span>{{ '%02d'|format(point.number) }}</span><h3>{{ point.title }}</h3><p>{{ point.body }}</p></article>{% endfor %}</div>
+  </div>
+</section>

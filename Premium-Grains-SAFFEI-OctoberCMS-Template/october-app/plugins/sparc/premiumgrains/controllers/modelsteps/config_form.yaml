@@ -1,0 +1,10 @@
+name: Agribusiness model step
+modelClass: Sparc\PremiumGrains\Models\ModelStep
+form: ~/plugins/sparc/premiumgrains/models/modelstep/fields.yaml
+defaultRedirect: sparc/premiumgrains/modelsteps
+create:
+    redirect: sparc/premiumgrains/modelsteps/update/:id
+    redirectClose: sparc/premiumgrains/modelsteps
+update:
+    redirect: sparc/premiumgrains/modelsteps
+    redirectClose: sparc/premiumgrains/modelsteps

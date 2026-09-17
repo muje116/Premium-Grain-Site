@@ -1,0 +1,60 @@
+# Premium Grains x SAFFEI — October CMS website
+
+This workspace contains a complete October CMS site based on the supplied Premium Grains x SAFFEI profile and the generated visual theme.
+
+## Project structure
+
+- `october-app/` — the runnable October CMS application.
+- `october-app/themes/premium-grains/` — active theme with seven configurable pages, layouts, partials and responsive assets.
+- `october-app/plugins/sparc/premiumgrains/` — custom backend content plugin, migrations, settings and CRUD controllers.
+- `dist/` — standalone static preview from the original generated theme.
+- `october-theme/premium-grains/` — original theme source preserved for reference.
+
+## Run locally
+
+Requirements: PHP 8.3+, Composer, and the PHP extensions used by October CMS (including SQLite, DOM/XML, cURL, GD, mbstring and ZIP).
+
+From `october-app/`:
+
+```powershell
+# Only needed when .env is not already present
+Copy-Item .env.example .env
+composer install
+php artisan october:migrate --force
+php artisan serve --host=127.0.0.1 --port=8000
+```
+
+MySQL is the primary local database. The current `.env` targets `127.0.0.1:3306`, database `premium_grains`, user `root`, with an empty password for the local WAMP development service. For any shared or production environment, replace these values with a dedicated MySQL user and secret.
+
+Before the first migration on another machine, create the database once:
+
+```sql
+CREATE DATABASE premium_grains CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
+SQLite remains available as a fallback by changing `DB_CONNECTION=sqlite` and setting `DB_DATABASE` to `storage/database.sqlite`.
+
+Open:
+
+- Frontend: http://127.0.0.1:8000/
+- Backend: http://127.0.0.1:8000/admin
+
+On a fresh environment, complete October’s first-run backend setup to create the administrator account.
+
+## Backend content management
+
+After signing in, use the **Premium Grains** menu in the backend to manage:
+
+- Pages and SEO metadata
+- Vision, mission and values
+- The five-part agribusiness model
+- SAFFEI focus areas
+- Kasiya and Mpherembe farm hubs
+- The six-step SAFFEI journey
+- Partnership points
+
+Use **Settings → Premium Grains** for the brand name, descriptor, hero image, purpose, contact email, locations, motto and footer copy. The public pages read these records through the `premiumContent` component, so content changes do not require editing Twig templates.
+
+## Source-content note
+
+The attached profile supplies the factual brand, programme, location and partnership content used in the seeded records. The original generated theme’s launch notes treated the partnership email and hero photography as placeholders; those are intentionally editable in the backend and should be confirmed before launch.

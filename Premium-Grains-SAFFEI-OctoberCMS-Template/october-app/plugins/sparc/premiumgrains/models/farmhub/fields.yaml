@@ -1,0 +1,38 @@
+fields:
+    name:
+        label: Hub name
+        span: left
+    location:
+        label: Location
+        span: right
+    metric_value:
+        label: Metric value
+        comment: Example: 4 ha or 190.
+        span: left
+    metric_label:
+        label: Metric label
+        span: right
+    descriptor:
+        label: Descriptor
+    accent:
+        label: Card colour
+        type: dropdown
+        options:
+            light: Light
+            inverse: Forest
+        default: light
+    points:
+        label: Key points
+        type: textarea
+        size: large
+        comment: Enter one point per line.
+    sort_order:
+        label: Sort order
+        type: number
+        default: 1
+        span: left
+    is_active:
+        label: Published
+        type: switch
+        default: true
+        span: right

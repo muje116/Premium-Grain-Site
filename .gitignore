@@ -1,0 +1,6 @@
+# Local analysis and visual QA artifacts
+tmp/
+**/tmp/
+
+# Failed local bootstrap created during setup; the maintained app is october-app.
+Premium-Grains-SAFFEI-OctoberCMS-Template/october-site/

@@ -1,0 +1,21 @@
+fields:
+    number:
+        label: Number
+        type: number
+        default: 1
+        span: left
+    sort_order:
+        label: Sort order
+        type: number
+        default: 1
+        span: right
+    title:
+        label: Partnership point
+    body:
+        label: Description
+        type: textarea
+        size: large
+    is_active:
+        label: Published
+        type: switch
+        default: true

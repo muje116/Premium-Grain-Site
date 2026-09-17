@@ -1,0 +1,31 @@
+title = "SAFFEI"
+url = "/saffei"
+layout = "default"
+meta_title = "SAFFEI | Premium Grains x SAFFEI"
+meta_description = "Meet SAFFEI, the farmer-centred initiative connecting sustainable agriculture, financial empowerment, farmer capacity and market connection."
+is_hidden = 0
+
+[premiumContent]
+pageCode = "saffei"
+==
+<section class="page-hero page-hero-forest">
+  <div class="container page-hero-grid">
+    <div><p class="eyebrow light">{{ pageContent.kicker }}</p><h1>{{ pageContent.title }}</h1><p class="page-lede">{{ site.saffei_name }}</p><p class="page-lede page-lede-soft">{{ pageContent.intro }}</p></div>
+    <div class="page-stamp page-stamp-light"><span>03</span><strong>Grow.<br>Harvest.<br>Prosper.</strong><small>SAFFEI project</small></div>
+  </div>
+</section>
+
+<section class="section saffei-detail">
+  <div class="container saffei-intro-grid"><div><p class="eyebrow orange">The social enterprise arm</p><h2>A stronger livelihood starts with a stronger system.</h2></div><div class="prose"><p>SAFFEI connects agricultural production with financial resilience, conservation and structured off-take so farming can become a more sustainable livelihood.</p><p>Through practical learning and organised groups, the initiative helps farmers build the confidence and capability to participate in a dependable value chain.</p></div></div>
+  <div class="container saffei-detail-grid">
+    {% for focus in saffeiFocus %}
+      <article><div class="focus-badge">{{ '%02d'|format(focus.number) }}</div><h3>{{ focus.title }}</h3><p>{{ focus.body }}</p></article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section saffei-motto"><div class="container saffei-motto-inner"><p class="eyebrow light">The promise</p><h2>{{ site.motto }}</h2><div class="motto-large"><span>Grow.</span><span>Harvest.</span><span>Prosper.</span></div></div></section>
+
+<section class="section band-cta">
+  <div class="container band-cta-inner"><div><p class="eyebrow orange">In the field</p><h2>See the hubs where the model comes alive.</h2></div><a class="button" href="{{ 'hubs'|page }}">Visit our hubs <span aria-hidden="true">↗</span></a></div>
+</section>

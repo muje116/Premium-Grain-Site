@@ -1,0 +1,36 @@
+title = "Our model"
+url = "/our-model"
+layout = "default"
+meta_title = "Our model | Premium Grains x SAFFEI"
+meta_description = "Explore the connected Premium Grains cycle: produce, support, aggregate, off-take and grow."
+is_hidden = 0
+
+[premiumContent]
+pageCode = "model"
+==
+<section class="page-hero page-hero-white">
+  <div class="container page-hero-grid">
+    <div><p class="eyebrow orange">{{ pageContent.kicker }}</p><h1>{{ pageContent.title }}</h1><p class="page-lede">{{ pageContent.intro }}</p></div>
+    <div class="page-stamp page-stamp-outline"><span>02</span><strong>One<br>connected<br>cycle</strong><small>Produce · Support · Grow</small></div>
+  </div>
+</section>
+
+<section class="section model-detail">
+  <div class="container section-head"><div><p class="eyebrow">The operating cycle</p><h2>Each part reinforces the next.</h2></div><p>Production creates the supply. Support makes it stronger. Aggregation and off-take turn effort into reliable market value.</p></div>
+  <div class="container model-steps">
+    {% for step in modelSteps %}
+      <article class="model-step-card">
+        <div class="model-step-number">{{ '%02d'|format(step.number) }}</div>
+        <div><div class="model-step-top"><span>{{ step.short_code }}</span><p>Stage {{ '%02d'|format(step.number) }}</p></div><h3>{{ step.title }}</h3><p>{{ step.body }}</p></div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section cycle-band">
+  <div class="container cycle-band-grid"><div><p class="eyebrow light">The value loop</p><h2>Commercial discipline, farmer development and market access in one rhythm.</h2></div><div class="cycle-wordmark"><span>Produce</span><i>+</i><span>Support</span><i>+</i><span>Aggregate</span><i>+</i><span>Off-take</span><i>+</i><span>Grow</span></div></div>
+</section>
+
+<section class="section band-cta">
+  <div class="container band-cta-inner"><div><p class="eyebrow orange">A closer look</p><h2>Meet the initiative built around farmers.</h2></div><a class="button" href="{{ 'saffei'|page }}">Discover SAFFEI <span aria-hidden="true">↗</span></a></div>
+</section>

@@ -1,0 +1,34 @@
+title = "Farm hubs"
+url = "/farm-hubs"
+layout = "default"
+meta_title = "Farm hubs | Premium Grains x SAFFEI"
+meta_description = "See how Kasiya in Lilongwe and Mpherembe in Mzimba anchor production, demonstration and farmer learning."
+is_hidden = 0
+
+[premiumContent]
+pageCode = "hubs"
+==
+<section class="page-hero page-hero-mist">
+  <div class="container page-hero-grid">
+    <div><p class="eyebrow orange">{{ pageContent.kicker }}</p><h1>{{ pageContent.title }}</h1><p class="page-lede">{{ pageContent.intro }}</p></div>
+    <div class="page-stamp"><span>04</span><strong>Places to<br>produce,<br>learn & scale</strong><small>Malawi</small></div>
+  </div>
+</section>
+
+<section class="section hubs-detail">
+  <div class="container hub-intro"><p class="eyebrow">Field presence</p><h2>Practical spaces for learning, production and partnership activation.</h2></div>
+  <div class="container hub-detail-grid">
+    {% for hub in farmHubs %}
+      <article class="hub-feature {{ hub.accent == 'inverse' ? 'inverse' : '' }}">
+        <div class="hub-feature-head"><span class="hub-index">{{ '%02d'|format(loop.index) }}</span><span class="hub-location">{{ hub.location }}</span><strong>{{ hub.metric_value }}</strong></div>
+        <h3>{{ hub.name }}</h3><p class="hub-feature-descriptor">{{ hub.descriptor }}</p>
+        <ul>{% for point in hub.points_list %}<li>{{ point }}</li>{% endfor %}</ul>
+        <div class="hub-feature-foot"><span>{{ hub.metric_label }}</span><span>Produce · Learn · Scale</span></div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section hubs-stats"><div class="container stat-row"><div><strong>2</strong><span>farm hubs</span></div><div><strong>4 ha</strong><span>Kasiya demonstration farm</span></div><div><strong>190</strong><span>farmers in the SAFFEI network</span></div></div></section>
+
+<section class="section band-cta band-cta-forest"><div class="container band-cta-inner"><div><p class="eyebrow light">Designed around farmers</p><h2>Follow the journey from registration to reinvestment.</h2></div><a class="button" href="{{ 'journey'|page }}">See the journey <span aria-hidden="true">↗</span></a></div></section>

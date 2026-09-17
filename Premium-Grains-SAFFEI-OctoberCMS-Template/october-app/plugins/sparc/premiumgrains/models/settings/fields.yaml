@@ -1,0 +1,65 @@
+tabs:
+    fields:
+        brand_name:
+            label: Brand name
+            tab: Brand
+            span: left
+        brand_descriptor:
+            label: Brand descriptor
+            tab: Brand
+            span: right
+        footer_tagline:
+            label: Footer tagline
+            tab: Brand
+            span: left
+        motto:
+            label: Motto
+            tab: Brand
+            span: right
+
+        hero_image:
+            label: Hero image
+            comment: Leave the default theme image in place until approved campaign photography is ready.
+            type: mediafinder
+            mode: image
+            tab: Hero
+        hero_cta_label:
+            label: Hero button label
+            tab: Hero
+            span: left
+        hero_cta_url:
+            label: Hero button URL
+            tab: Hero
+            span: right
+        purpose:
+            label: Purpose
+            type: textarea
+            size: large
+            tab: About
+        approach:
+            label: Approach
+            type: textarea
+            size: large
+            tab: About
+        saffei_name:
+            label: SAFFEI full name
+            tab: About
+
+        partnership_email:
+            label: Partnership email
+            type: email
+            comment: Confirm this address before launch.
+            tab: Contact
+            span: left
+        location_one:
+            label: Location one
+            tab: Contact
+            span: left
+        location_two:
+            label: Location two
+            tab: Contact
+            span: right
+        location_country:
+            label: Country
+            tab: Contact
+            span: left

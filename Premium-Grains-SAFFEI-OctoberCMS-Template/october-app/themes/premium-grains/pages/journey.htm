@@ -1,0 +1,26 @@
+title = "SAFFEI journey"
+url = "/journey"
+layout = "default"
+meta_title = "The SAFFEI journey | Premium Grains x SAFFEI"
+meta_description = "Follow the six-step SAFFEI journey from farmer registration and preparation to harvest, income and reinvestment."
+is_hidden = 0
+
+[premiumContent]
+pageCode = "journey"
+==
+<section class="page-hero page-hero-white">
+  <div class="container page-hero-grid">
+    <div><p class="eyebrow orange">{{ pageContent.kicker }}</p><h1>{{ pageContent.title }}</h1><p class="page-lede">{{ pageContent.intro }}</p></div>
+    <div class="page-stamp page-stamp-outline"><span>05</span><strong>Organise.<br>Prepare.<br>Earn.</strong><small>A disciplined cycle</small></div>
+  </div>
+</section>
+
+<section class="section journey-detail">
+  <div class="container journey-detail-grid"><div class="journey-detail-copy"><p class="eyebrow">The cycle</p><h2>From organised participation to market readiness.</h2><p class="prose">Each step is designed to build the conditions for the next: better information, better practice, better quality and stronger commercial confidence.</p><div class="result result-large"><span>The result</span><strong>Better organised farmers.<br>Better quality.<br>Stronger market readiness.</strong></div></div>
+    <ol class="journey-timeline">
+      {% for step in journeySteps %}<li><span class="journey-number">{{ '%02d'|format(step.number) }}</span><div><h3>{{ step.title }}</h3><p>{{ step.body }}</p></div></li>{% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section journey-callout"><div class="container journey-callout-inner"><p class="eyebrow light">The next cycle</p><h2>Income, learning and reinvestment keep the value moving.</h2><a class="text-link light-link" href="{{ 'partner'|page }}">Build with us <span aria-hidden="true">↗</span></a></div></section>

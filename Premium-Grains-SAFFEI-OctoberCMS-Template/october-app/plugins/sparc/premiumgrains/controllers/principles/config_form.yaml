@@ -1,0 +1,10 @@
+name: Principle
+modelClass: Sparc\PremiumGrains\Models\Principle
+form: ~/plugins/sparc/premiumgrains/models/principle/fields.yaml
+defaultRedirect: sparc/premiumgrains/principles
+create:
+    redirect: sparc/premiumgrains/principles/update/:id
+    redirectClose: sparc/premiumgrains/principles
+update:
+    redirect: sparc/premiumgrains/principles
+    redirectClose: sparc/premiumgrains/principles

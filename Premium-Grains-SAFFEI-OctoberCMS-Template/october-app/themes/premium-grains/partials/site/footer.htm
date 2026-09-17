@@ -1,0 +1,13 @@
+<footer>
+  <div class="container footer-grid">
+    <a class="brand" href="{{ 'home'|page }}" aria-label="{{ site.brand_name|default('Premium Grains') }} home"><img src="{{ 'assets/images/brand-lockup.png'|theme }}" alt="{{ site.brand_name|default('Premium Grains') }} {{ site.brand_descriptor|default('SAFFEI Project') }}"></a>
+    <p>{{ site.footer_tagline|default('Growing value. Strengthening farmers.') }}</p>
+    <div>
+      <span>{{ site.location_one|default('Kasiya, Lilongwe') }}</span>
+      <span>{{ site.location_two|default('Mpherembe, Mzimba') }}</span>
+      <span>{{ site.location_country|default('Malawi') }}</span>
+      {% if site.partnership_email %}<a class="footer-email" href="mailto:{{ site.partnership_email }}">{{ site.partnership_email }}</a>{% endif %}
+    </div>
+  </div>
+  <div class="container footer-bottom"><span>© {{ 'now'|date('Y') }} {{ site.brand_name|default('Premium Grains') }} Ltd</span><span>{{ site.motto|default('Tilime. Tikolole. Titukuke.') }}</span></div>
+</footer>

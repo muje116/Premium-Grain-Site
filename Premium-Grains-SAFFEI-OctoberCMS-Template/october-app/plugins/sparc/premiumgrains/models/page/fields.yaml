@@ -1,0 +1,42 @@
+fields:
+    code:
+        label: Page code
+        comment: Lowercase identifier used by the front-end template. Keep it stable.
+        span: left
+    label:
+        label: Navigation label
+        span: right
+    is_active:
+        label: Published
+        type: switch
+        default: true
+        span: left
+    sort_order:
+        label: Sort order
+        type: number
+        default: 1
+        span: right
+
+tabs:
+    fields:
+        kicker:
+            label: Kicker
+            tab: Content
+        title:
+            label: Page title
+            type: textarea
+            size: small
+            tab: Content
+        intro:
+            label: Introduction
+            type: textarea
+            size: large
+            tab: Content
+        meta_title:
+            label: Meta title
+            tab: Search
+        meta_description:
+            label: Meta description
+            type: textarea
+            size: small
+            tab: Search

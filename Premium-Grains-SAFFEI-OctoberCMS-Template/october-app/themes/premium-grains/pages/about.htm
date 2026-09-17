@@ -1,0 +1,44 @@
+title = "About"
+url = "/about"
+layout = "default"
+meta_title = "About Premium Grains | Premium Grains x SAFFEI"
+meta_description = "Learn how Premium Grains builds a resilient food and commodity business around farmer support, reliable markets and shared value."
+is_hidden = 0
+
+[premiumContent]
+pageCode = "about"
+==
+<section class="page-hero page-hero-mist">
+  <div class="container page-hero-grid">
+    <div>
+      <p class="eyebrow orange">{{ pageContent.kicker }}</p>
+      <h1>{{ pageContent.title }}</h1>
+      <p class="page-lede">{{ pageContent.intro }}</p>
+    </div>
+    <div class="page-stamp"><span>01</span><strong>Field<br>to market</strong><small>Premium Grains x SAFFEI</small></div>
+  </div>
+</section>
+
+<section class="section about-detail">
+  <div class="container narrative-grid">
+    <div><p class="eyebrow">Our purpose</p><h2>A resilient food and commodity business built around practical value.</h2></div>
+    <div class="prose"><p>{{ site.purpose }}</p><p>Our work brings commercial discipline and farmer development into the same operating rhythm, so every season builds capability, quality and confidence for the next.</p></div>
+  </div>
+  <div class="container purpose-band">
+    <article><p class="eyebrow light">Our purpose</p><p>{{ site.purpose }}</p></article>
+    <article class="purpose-band-accent"><p class="eyebrow orange">Our approach</p><p>{{ site.approach }}</p></article>
+  </div>
+</section>
+
+<section class="section principle-section">
+  <div class="container section-head"><div><p class="eyebrow orange">What guides us</p><h2>Clear principles. Practical delivery.</h2></div><p>Our vision, mission and values give the work a shared direction across the field, the market and every partnership in between.</p></div>
+  <div class="container principle-grid">
+    {% for principle in principles %}
+      <article><span>{{ '%02d'|format(principle.number) }}</span><h3>{{ principle.title }}</h3><p>{{ principle.body }}</p></article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section band-cta band-cta-forest">
+  <div class="container band-cta-inner"><div><p class="eyebrow light">Keep exploring</p><h2>See how the model connects.</h2></div><a class="button" href="{{ 'model'|page }}">Explore our model <span aria-hidden="true">↗</span></a></div>
+</section>

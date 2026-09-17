@@ -1,0 +1,15 @@
+title: SAFFEI journey
+list: ~/plugins/sparc/premiumgrains/models/journeystep/columns.yaml
+modelClass: Sparc\PremiumGrains\Models\JourneyStep
+recordUrl: sparc/premiumgrains/journeysteps/update/:id
+noRecordsMessage: backend::lang.list.no_records
+recordsPerPage: 30
+showSetup: true
+showCheckboxes: true
+defaultSort:
+    column: sort_order
+    direction: asc
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: Search journey steps

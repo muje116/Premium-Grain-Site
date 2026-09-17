@@ -1,0 +1,16 @@
+columns:
+    number:
+        label: '#'
+        type: number
+        sortable: true
+    title:
+        label: Principle
+        searchable: true
+        sortable: true
+    body:
+        label: Description
+        searchable: true
+    is_active:
+        label: Published
+        type: switch
+        sortable: true
