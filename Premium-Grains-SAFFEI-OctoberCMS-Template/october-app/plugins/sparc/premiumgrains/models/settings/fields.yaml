@@ -41,14 +41,18 @@ tabs:
             type: textarea
             size: large
             tab: About
-        saffei_name:
-            label: SAFFEI full name
-            tab: About
-
         partnership_email:
-            label: Partnership email
+            label: Contact email
             type: email
-            comment: Confirm this address before launch.
+            comment: Used in the footer and contact page.
+            tab: Contact
+            span: left
+        contact_phone:
+            label: Phone number
+            tab: Contact
+            span: right
+        contact_address:
+            label: Address or office line
             tab: Contact
             span: left
         location_one:
@@ -63,3 +67,20 @@ tabs:
             label: Country
             tab: Contact
             span: left
+
+        facebook_url:
+            label: Facebook URL
+            tab: Social media
+            span: left
+        instagram_url:
+            label: Instagram URL
+            tab: Social media
+            span: right
+        linkedin_url:
+            label: LinkedIn URL
+            tab: Social media
+            span: left
+        x_url:
+            label: X / Twitter URL
+            tab: Social media
+            span: right

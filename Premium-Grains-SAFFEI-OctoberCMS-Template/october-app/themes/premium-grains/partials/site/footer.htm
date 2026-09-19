@@ -1,13 +1,32 @@
 <footer>
   <div class="container footer-grid">
-    <a class="brand" href="{{ 'home'|page }}" aria-label="{{ site.brand_name|default('Premium Grains') }} home"><img src="{{ 'assets/images/brand-lockup.png'|theme }}" alt="{{ site.brand_name|default('Premium Grains') }} {{ site.brand_descriptor|default('SAFFEI Project') }}"></a>
-    <p>{{ site.footer_tagline|default('Growing value. Strengthening farmers.') }}</p>
-    <div>
+    <div class="footer-brand">
+      <a class="brand" href="{{ 'home'|page }}" aria-label="{{ site.brand_name|default('Premium Grains') }} home"><img src="{{ 'assets/images/brand-lockup.png'|theme }}" alt="{{ site.brand_name|default('Premium Grains') }} {{ site.brand_descriptor|default('Projects & partnerships') }}"></a>
+      <p>{{ site.footer_tagline|default('Growing value. Strengthening farmers.') }}</p>
+    </div>
+    <div class="footer-contact">
+      <span class="footer-label">Contact</span>
+      {% if site.contact_address %}<span>{{ site.contact_address }}</span>{% endif %}
       <span>{{ site.location_one|default('Kasiya, Lilongwe') }}</span>
       <span>{{ site.location_two|default('Mpherembe, Mzimba') }}</span>
-      <span>{{ site.location_country|default('Malawi') }}</span>
+      {% if site.contact_phone %}<a href="tel:{{ site.contact_phone|replace({' ': ''}) }}">{{ site.contact_phone }}</a>{% endif %}
       {% if site.partnership_email %}<a class="footer-email" href="mailto:{{ site.partnership_email }}">{{ site.partnership_email }}</a>{% endif %}
     </div>
+    <div class="footer-links">
+      <span class="footer-label">Explore</span>
+      <a href="{{ 'about'|page }}">About us</a>
+      <a href="{{ 'projects'|page }}">Projects</a>
+      <a href="{{ 'partner'|page }}">Partner with us</a>
+      <a href="{{ 'contact'|page }}">Contact us</a>
+    </div>
+    <div class="footer-social">
+      <span class="footer-label">Follow the work</span>
+      {% if site.facebook_url %}<a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook <span aria-hidden="true">↗</span></a>{% endif %}
+      {% if site.instagram_url %}<a href="{{ site.instagram_url }}" target="_blank" rel="noopener">Instagram <span aria-hidden="true">↗</span></a>{% endif %}
+      {% if site.linkedin_url %}<a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>{% endif %}
+      {% if site.x_url %}<a href="{{ site.x_url }}" target="_blank" rel="noopener">X / Twitter <span aria-hidden="true">↗</span></a>{% endif %}
+      {% if not site.facebook_url and not site.instagram_url and not site.linkedin_url and not site.x_url %}<span class="footer-social-empty">Social links can be added from Settings.</span>{% endif %}
+    </div>
   </div>
-  <div class="container footer-bottom"><span>© {{ 'now'|date('Y') }} {{ site.brand_name|default('Premium Grains') }} Ltd</span><span>{{ site.motto|default('Tilime. Tikolole. Titukuke.') }}</span></div>
+  <div class="container footer-bottom"><span>© {{ 'now'|date('Y') }} {{ site.brand_name|default('Premium Grains') }} Ltd</span><span>{{ site.motto|default('Grown, Earn, Thrive') }}</span></div>
 </footer>

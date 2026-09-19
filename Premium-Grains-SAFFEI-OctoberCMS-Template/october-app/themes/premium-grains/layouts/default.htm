@@ -1,4 +1,4 @@
-description = "Premium Grains x SAFFEI website layout"
+description = "Premium Grains website layout"
 ==
 <!doctype html>
 <html lang="en">
@@ -6,11 +6,12 @@ description = "Premium Grains x SAFFEI website layout"
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% set siteName = site.brand_name|default('Premium Grains') %}
-  {% set description = pageContent.meta_description|default(this.page.meta_description)|default('Premium Grains and SAFFEI connect climate-smart production, farmer support and reliable agricultural markets across Malawi.') %}
+  {% set pageTitle = project ? project.name ~ ' | ' ~ siteName : (pageContent.meta_title|default(this.page.meta_title)|default(this.page.title ~ ' | ' ~ siteName)) %}
+  {% set description = project ? project.summary : (pageContent.meta_description|default(this.page.meta_description)|default('Premium Grains is a Malawian agribusiness building practical value from farm production to dependable markets.')) %}
   <meta name="description" content="{{ description }}">
   <meta name="theme-color" content="#043d38">
-  <title>{% if pageContent.meta_title %}{{ pageContent.meta_title }}{% else %}{{ this.page.title }} | {{ siteName }}{% endif %}</title>
-  <meta property="og:title" content="{% if pageContent.meta_title %}{{ pageContent.meta_title }}{% else %}{{ this.page.title }} | {{ siteName }}{% endif %}">
+  <title>{{ pageTitle }}</title>
+  <meta property="og:title" content="{{ pageTitle }}">
   <meta property="og:description" content="{{ description }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ this.page.url }}">
@@ -20,7 +21,8 @@ description = "Premium Grains x SAFFEI website layout"
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link href="{{ 'assets/css/site.css'|theme }}" rel="stylesheet">
   <link href="{{ 'assets/css/pages.css'|theme }}" rel="stylesheet">
-  <link href="{{ 'assets/css/overrides.css'|theme }}?v=2" rel="stylesheet">
+  <link href="{{ 'assets/css/overrides.css'|theme }}?v=3" rel="stylesheet">
+  <link href="{{ 'assets/css/refinement.css'|theme }}?v=1" rel="stylesheet">
   {% styles %}
 </head>
 <body>

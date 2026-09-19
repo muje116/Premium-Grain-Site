@@ -1,12 +1,12 @@
-# Premium Grains x SAFFEI — October CMS website
+# Premium Grains — October CMS website
 
-This workspace contains a complete October CMS site based on the supplied Premium Grains x SAFFEI profile and the generated visual theme.
+This workspace contains a complete October CMS site based on the supplied Premium Grains profile and the generated visual theme. SAFFEI is presented as one configurable project within the wider Premium Grains business.
 
 ## Project structure
 
 - `october-app/` — the runnable October CMS application.
-- `october-app/themes/premium-grains/` — active theme with seven configurable pages, layouts, partials and responsive assets.
-- `october-app/plugins/sparc/premiumgrains/` — custom backend content plugin, migrations, settings and CRUD controllers.
+- `october-app/themes/premium-grains/` — active theme with configurable pages, project listing/detail routes, banners, layouts, partials and responsive assets.
+- `october-app/plugins/sparc/premiumgrains/` — custom backend content plugin, migrations, settings, project/team/contact models and CRUD controllers.
 - `dist/` — standalone static preview from the original generated theme.
 - `october-theme/premium-grains/` — original theme source preserved for reference.
 
@@ -46,14 +46,18 @@ On a fresh environment, complete October’s first-run backend setup to create t
 After signing in, use the **Premium Grains** menu in the backend to manage:
 
 - Pages and SEO metadata
+- A reusable banner image for every page
+- Projects and project content items, with SAFFEI seeded as the first project
 - Vision, mission and values
 - The five-part agribusiness model
-- SAFFEI focus areas
 - Kasiya and Mpherembe farm hubs
-- The six-step SAFFEI journey
 - Partnership points
+- Team members, portraits and biographies
+- Contact form messages
 
-Use **Settings → Premium Grains** for the brand name, descriptor, hero image, purpose, contact email, locations, motto and footer copy. The public pages read these records through the `premiumContent` component, so content changes do not require editing Twig templates.
+Use **Settings → Premium Grains** for the brand name, descriptor, hero image, purpose, contact email, phone, address, locations, motto, footer copy and social media URLs. The public pages read these records through the `premiumContent` component, so content changes do not require editing Twig templates.
+
+The main public navigation is **About**, **Our model**, **Projects**, **Farm hubs**, **Contact** and **Partner with us**. The former `/saffei` and `/journey` URLs redirect into the SAFFEI project detail route at `/projects/saffei`.
 
 ## Source-content note
 

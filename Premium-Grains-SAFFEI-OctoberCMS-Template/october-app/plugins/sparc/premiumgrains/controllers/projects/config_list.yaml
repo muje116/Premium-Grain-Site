@@ -1,0 +1,15 @@
+title: Projects
+list: ~/plugins/sparc/premiumgrains/models/project/columns.yaml
+modelClass: Sparc\PremiumGrains\Models\Project
+recordUrl: sparc/premiumgrains/projects/update/:id
+noRecordsMessage: backend::lang.list.no_records
+recordsPerPage: 30
+showSetup: true
+showCheckboxes: true
+defaultSort:
+    column: sort_order
+    direction: asc
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: Search projects

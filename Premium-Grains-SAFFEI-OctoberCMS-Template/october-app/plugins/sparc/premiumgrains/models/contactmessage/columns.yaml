@@ -1,0 +1,19 @@
+columns:
+    name:
+        label: Name
+        searchable: true
+        sortable: true
+    email:
+        label: Email
+        searchable: true
+    enquiry_type:
+        label: Enquiry
+        searchable: true
+    is_read:
+        label: Read
+        type: switch
+        sortable: true
+    created_at:
+        label: Received
+        type: datetime
+        sortable: true

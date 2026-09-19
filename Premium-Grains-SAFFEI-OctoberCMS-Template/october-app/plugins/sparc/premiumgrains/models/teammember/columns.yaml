@@ -1,15 +1,11 @@
 columns:
-    label:
-        label: Page
+    name:
+        label: Name
         searchable: true
         sortable: true
-    code:
-        label: Code
+    role:
+        label: Role
         searchable: true
-        sortable: true
-    banner_image:
-        label: Banner
-        type: image
     is_active:
         label: Published
         type: switch

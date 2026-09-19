@@ -1,19 +1,14 @@
 title = "Our model"
 url = "/our-model"
 layout = "default"
-meta_title = "Our model | Premium Grains x SAFFEI"
+meta_title = "Our model | Premium Grains"
 meta_description = "Explore the connected Premium Grains cycle: produce, support, aggregate, off-take and grow."
 is_hidden = 0
 
 [premiumContent]
 pageCode = "model"
 ==
-<section class="page-hero page-hero-white">
-  <div class="container page-hero-grid">
-    <div><p class="eyebrow orange">{{ pageContent.kicker }}</p><h1>{{ pageContent.title }}</h1><p class="page-lede">{{ pageContent.intro }}</p></div>
-    <div class="page-stamp page-stamp-outline"><span>02</span><strong>One<br>connected<br>cycle</strong><small>Produce · Support · Grow</small></div>
-  </div>
-</section>
+{% partial 'site/page-banner' tone='mist' index='02' stamp='One connected cycle' label='Produce · Support · Grow' %}
 
 <section class="section model-detail">
   <div class="container section-head"><div><p class="eyebrow">The operating cycle</p><h2>Each part reinforces the next.</h2></div><p>Production creates the supply. Support makes it stronger. Aggregation and off-take turn effort into reliable market value.</p></div>
@@ -32,5 +27,5 @@ pageCode = "model"
 </section>
 
 <section class="section band-cta">
-  <div class="container band-cta-inner"><div><p class="eyebrow orange">A closer look</p><h2>Meet the initiative built around farmers.</h2></div><a class="button" href="{{ 'saffei'|page }}">Discover SAFFEI <span aria-hidden="true">↗</span></a></div>
+  <div class="container band-cta-inner"><div><p class="eyebrow orange">A closer look</p><h2>Explore the projects built around farmers.</h2></div><a class="button" href="{{ 'projects'|page }}">View projects <span aria-hidden="true">↗</span></a></div>
 </section>

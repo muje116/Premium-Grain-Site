@@ -1,0 +1,29 @@
+title = "Projects"
+url = "/projects"
+layout = "default"
+meta_title = "Projects | Premium Grains"
+meta_description = "Explore Premium Grains projects, including SAFFEI, and see how each one creates practical value for farmers and partners."
+is_hidden = 0
+
+[premiumContent]
+pageCode = "projects"
+==
+{% partial 'site/page-banner' tone='forest' index='03' stamp='Projects in motion' label='Farmers · partners · progress' %}
+
+<section class="section projects-list-section">
+  <div class="container project-list-intro"><div><p class="eyebrow orange">More than one story</p><h2>One business. Many ways to create value.</h2></div><div class="prose"><p>Premium Grains undertakes projects that respond to real needs in the field and connect them to practical commercial opportunity. Each project has its own focus, partners and pathway to progress.</p><p>SAFFEI is our featured farmer-centred project. It sits inside a wider Premium Grains platform that can grow with new initiatives.</p></div></div>
+  <div class="container project-grid project-grid-list">
+    {% for project in projects %}
+      <article class="project-card project-card-large {{ project.accent == 'forest' ? 'project-card-forest' : '' }}">
+        <div class="project-card-media">
+          {% if project.banner_image and project.banner_image starts with 'assets/' %}<img src="{{ project.banner_image|theme }}" alt="{{ project.name }} project banner">{% elseif project.banner_image %}<img src="{{ project.banner_image|media }}" alt="{{ project.name }} project banner">{% else %}<img src="{{ 'assets/images/hero-farmer.png'|theme }}" alt="{{ project.name }} project banner">{% endif %}
+        </div>
+        <div class="project-card-body"><div class="project-card-top"><span class="eyebrow {{ project.accent == 'forest' ? 'light' : 'orange' }}">{{ project.kicker|default('Project') }}</span>{% if project.is_featured %}<span class="project-featured">Featured</span>{% endif %}</div><h3>{{ project.name }}</h3><p class="project-card-title">{{ project.title }}</p><p>{{ project.summary }}</p><a class="text-link {{ project.accent == 'forest' ? 'light-link' : '' }}" href="{{ 'project'|page({ slug: project.slug }) }}">Explore {{ project.name }} <span aria-hidden="true">↗</span></a></div>
+      </article>
+    {% else %}
+      <div class="empty-state"><p class="eyebrow orange">Projects coming soon</p><h2>We are preparing the next projects in the field.</h2><p>Check back soon or get in touch to explore partnership opportunities.</p></div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section band-cta band-cta-forest"><div class="container band-cta-inner"><div><p class="eyebrow light">Have an idea?</p><h2>Bring a practical opportunity to the table.</h2></div><a class="button" href="{{ 'contact'|page }}">Start a conversation <span aria-hidden="true">↗</span></a></div></section>

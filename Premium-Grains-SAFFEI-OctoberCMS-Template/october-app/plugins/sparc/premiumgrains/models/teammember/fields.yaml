@@ -1,0 +1,27 @@
+fields:
+    name:
+        label: Name
+        span: left
+    role:
+        label: Role or responsibility
+        span: right
+    is_active:
+        label: Published
+        type: switch
+        default: true
+        span: left
+    sort_order:
+        label: Sort order
+        type: number
+        default: 1
+        span: right
+    image:
+        label: Portrait
+        comment: Optional. A warm, well-lit portrait works best.
+        type: mediafinder
+        mode: image
+        span: left
+    bio:
+        label: Short biography
+        type: textarea
+        size: large

@@ -1,0 +1,22 @@
+columns:
+    project:
+        label: Project
+        relation: project
+        select: name
+        sortable: false
+    category:
+        label: Type
+        searchable: true
+        sortable: true
+    number:
+        label: '#'
+        type: number
+        sortable: true
+    title:
+        label: Title
+        searchable: true
+        sortable: true
+    is_active:
+        label: Published
+        type: switch
+        sortable: true

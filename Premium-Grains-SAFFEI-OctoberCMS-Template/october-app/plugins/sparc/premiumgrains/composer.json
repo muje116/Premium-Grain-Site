@@ -1,7 +1,7 @@
 {
     "name": "sparc/premiumgrains-plugin",
     "type": "october-plugin",
-    "description": "Editable content plugin for the Premium Grains x SAFFEI OctoberCMS site.",
+    "description": "Editable content, projects, team profiles and enquiries for the Premium Grains OctoberCMS site.",
     "require": {
         "composer/installers": "^2.0"
     }

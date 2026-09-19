@@ -1,8 +1,8 @@
 title = "Home"
 url = "/"
 layout = "default"
-meta_title = "Premium Grains x SAFFEI | Growing value"
-meta_description = "Premium Grains and SAFFEI connect climate-smart production, farmer support and reliable agricultural markets across Malawi."
+meta_title = "Premium Grains | Grown, Earn, Thrive"
+meta_description = "Premium Grains is a Malawian agribusiness building practical value from farm production to dependable markets."
 is_hidden = 0
 
 [premiumContent]
@@ -18,7 +18,7 @@ pageCode = "home"
   {% endif %}
   <div class="hero-shade"></div>
   <div class="container hero-content">
-    <p class="eyebrow light">{{ pageContent.kicker|default('Premium Grains x SAFFEI') }}</p>
+    <p class="eyebrow light">{{ pageContent.kicker|default('Premium Grains') }}</p>
     <h1>{{ pageContent.title|default('Growing value.\nStrengthening farmers.')|nl2br }}</h1>
     <p class="hero-copy">{{ pageContent.intro|default('A modern Malawian agribusiness rooted in production, dependable markets and stronger livelihoods.') }}</p>
     <div class="hero-actions">
@@ -29,7 +29,7 @@ pageCode = "home"
   <div class="container hero-foot">
     <span>{{ site.location_one|default('Kasiya, Lilongwe') }}</span>
     <span>{{ site.location_two|default('Mpherembe, Mzimba') }}</span>
-    <strong>{{ site.motto|default('Tilime. Tikolole. Titukuke.') }}</strong>
+    <strong>{{ site.motto|default('Grown, Earn, Thrive') }}</strong>
   </div>
 </section>
 
@@ -75,27 +75,40 @@ pageCode = "home"
   </div>
 </section>
 
-<section class="section saffei" id="saffei">
-  <div class="container saffei-grid">
-    <div class="saffei-lead">
-      <p class="eyebrow light">{{ pages.saffei.kicker|default('The social enterprise arm') }}</p>
-      <h2>{{ pages.saffei.title|default('Meet SAFFEI') }}</h2>
-      <p class="long-name">{{ site.saffei_name|default('Sustainable Agriculture and Financial Empowerment Initiative') }}</p>
-      <p>{{ pages.saffei.intro|default("SAFFEI connects agricultural production with financial resilience, conservation and structured off-take so farming becomes a stronger, more sustainable livelihood.") }}</p>
-      <div class="motto"><span>Grow.</span><span>Harvest.</span><span>Prosper.</span></div>
-      <a class="text-link light-link" href="{{ 'saffei'|page }}">Discover SAFFEI <span aria-hidden="true">↗</span></a>
+<section class="section projects-preview" id="projects">
+  <div class="container">
+    <div class="section-head">
+      <div><p class="eyebrow orange">{{ pages.projects.kicker|default('Projects in motion') }}</p><h2>{{ pages.projects.title|default('Purpose becomes progress in the field.') }}</h2></div>
+      <p>{{ pages.projects.intro|default('Explore the projects Premium Grains undertakes with farmers, communities and partners.') }}</p>
     </div>
-    <div class="saffei-cards">
-      {% for focus in saffeiFocus %}
-        <article><b>{{ '%02d'|format(focus.number) }}</b><h3>{{ focus.title }}</h3><p>{{ focus.body }}</p></article>
+    <div class="project-grid project-grid-home">
+      {% for project in projects %}
+        <article class="project-card {{ project.accent == 'forest' ? 'project-card-forest' : '' }}">
+          <div class="project-card-media">
+            {% if project.banner_image and project.banner_image starts with 'assets/' %}<img src="{{ project.banner_image|theme }}" alt="{{ project.name }} project banner">{% elseif project.banner_image %}<img src="{{ project.banner_image|media }}" alt="{{ project.name }} project banner">{% else %}<img src="{{ 'assets/images/hero-farmer.png'|theme }}" alt="{{ project.name }} project banner">{% endif %}
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-top"><span class="eyebrow {{ project.accent == 'forest' ? 'light' : 'orange' }}">{{ project.kicker|default('Project') }}</span>{% if project.is_featured %}<span class="project-featured">Featured</span>{% endif %}</div>
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.summary }}</p>
+            <a class="text-link {{ project.accent == 'forest' ? 'light-link' : '' }}" href="{{ 'project'|page({ slug: project.slug }) }}">View project <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      {% else %}
+        <div class="empty-state"><p class="eyebrow orange">Projects coming soon</p><h3>We are preparing the next projects in the field.</h3><p>Check back soon or get in touch to explore partnership opportunities.</p></div>
       {% endfor %}
     </div>
+    <a class="inline-link" href="{{ 'projects'|page }}">See all projects <span aria-hidden="true">↗</span></a>
   </div>
+</section>
+
+<section class="section motto-band">
+  <div class="container motto-band-inner"><p class="eyebrow light">Our promise</p><h2>{{ site.motto|default('Grown, Earn, Thrive') }}</h2><p>Commercial progress should strengthen the people and places that make it possible.</p></div>
 </section>
 
 <section class="section hubs" id="hubs">
   <div class="container">
-    <div class="section-head"><div><p class="eyebrow">{{ pages.hubs.kicker|default('Where the model comes alive') }}</p><h2>{{ pages.hubs.title|default('Our farm hubs') }}</h2></div><p>{{ pages.hubs.intro|default('Kasiya and Mpherembe anchor production, demonstration, farmer learning and partnership activation.') }}</p></div>
+    <div class="section-head"><div><p class="eyebrow">{{ pages.hubs.kicker|default('Where the model comes alive') }}</p><h2>{{ pages.hubs.title|default('Our farm hubs') }}</h2></div><p>{{ pages.hubs.intro|default('Our farm hubs anchor production, demonstration, farmer learning and partnership activation.') }}</p></div>
     <div class="hub-grid">
       {% for hub in farmHubs %}
         <article class="hub-card {{ hub.accent == 'inverse' ? 'inverse' : '' }}">
@@ -108,17 +121,6 @@ pageCode = "home"
       {% endfor %}
     </div>
     <a class="inline-link" href="{{ 'hubs'|page }}">See both farm hubs <span aria-hidden="true">↗</span></a>
-  </div>
-</section>
-
-<section class="section journey" id="journey">
-  <div class="container journey-grid">
-    <div class="journey-title"><p class="eyebrow orange">{{ pages.journey.kicker|default('Designed around farmers') }}</p><h2>{{ pages.journey.title|default('The SAFFEI journey') }}</h2><p>{{ pages.journey.intro|default('A disciplined cycle that begins with organisation and ends with income, learning and reinvestment.') }}</p><div class="result"><span>The result</span><strong>Better organised farmers.<br>Better quality.<br>Stronger market readiness.</strong></div></div>
-    <ol class="steps">
-      {% for step in journeySteps %}
-        <li><span>{{ '%02d'|format(step.number) }}</span><div><h3>{{ step.title }}</h3><p>{{ step.body }}</p></div></li>
-      {% endfor %}
-    </ol>
   </div>
 </section>
 

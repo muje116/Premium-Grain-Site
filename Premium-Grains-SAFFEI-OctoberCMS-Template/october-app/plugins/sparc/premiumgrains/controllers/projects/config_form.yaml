@@ -1,0 +1,10 @@
+name: Project
+modelClass: Sparc\PremiumGrains\Models\Project
+form: ~/plugins/sparc/premiumgrains/models/project/fields.yaml
+defaultRedirect: sparc/premiumgrains/projects
+create:
+    redirect: sparc/premiumgrains/projects/update/:id
+    redirectClose: sparc/premiumgrains/projects
+update:
+    redirect: sparc/premiumgrains/projects
+    redirectClose: sparc/premiumgrains/projects

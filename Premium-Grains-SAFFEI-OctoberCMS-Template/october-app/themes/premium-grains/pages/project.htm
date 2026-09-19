@@ -1,0 +1,29 @@
+title = "Project"
+url = "/projects/:slug"
+layout = "default"
+meta_title = "{{ project.name }} | Premium Grains"
+meta_description = "{{ project.summary }}"
+is_hidden = 0
+
+[premiumContent]
+pageCode = "projects"
+projectSlug = "{{ :slug }}"
+==
+{% if project is empty %}
+  {% do abort(404) %}
+{% else %}
+  {% set projectBanner = project.banner_image|default(pageContent.banner_image)|default('assets/images/hero-farmer.png') %}
+  <section class="project-banner project-banner-{{ project.accent|default('forest') }}">
+    {% if projectBanner starts with 'assets/' %}<img class="project-banner-image" src="{{ projectBanner|theme }}" alt="{{ project.name }} project banner">{% else %}<img class="project-banner-image" src="{{ projectBanner|media }}" alt="{{ project.name }} project banner">{% endif %}
+    <div class="project-banner-overlay"></div>
+    <div class="container project-banner-content"><div><p class="eyebrow light">{{ project.kicker|default('Premium Grains project') }}</p><h1>{{ project.title }}</h1><p class="page-lede page-banner-lede">{{ project.summary }}</p></div><div class="page-banner-mark"><span>{{ project.stat_value|default('01') }}</span><strong>{{ project.name }}</strong><small>{{ project.stat_label|default('Project in motion') }}</small></div></div>
+  </section>
+
+  <section class="section project-detail-intro"><div class="container narrative-grid"><div><p class="eyebrow orange">Inside the project</p><h2>{{ project.name }} creates a practical path from intent to impact.</h2></div><div class="prose"><p>{{ project.body|default(project.summary) }}</p><p>Projects can be added, shaped and published from the Premium Grains backend as the work grows.</p></div></div></section>
+
+  {% if projectPoints|length %}<section class="section project-focus-section"><div class="container section-head"><div><p class="eyebrow orange">What it focuses on</p><h2>The work is designed around real conditions.</h2></div><p>Each focus area gives the project a clear promise in the field and a practical way to measure progress.</p></div><div class="container project-focus-grid">{% for point in projectPoints %}<article><span class="focus-badge">{{ '%02d'|format(point.number) }}</span><h3>{{ point.title }}</h3><p>{{ point.body }}</p></article>{% endfor %}</div></section>{% endif %}
+
+  {% if projectJourney|length %}<section class="section project-journey-section" id="journey"><div class="container project-journey-grid"><div class="journey-detail-copy"><p class="eyebrow orange">The journey</p><h2>Progress is a cycle, not a single moment.</h2><p class="prose">The project moves through a sequence that helps farmers and partners turn preparation into production, income and the next opportunity.</p><div class="result result-large"><span>Our motto</span><strong>{{ site.motto|default('Grown, Earn, Thrive') }}</strong></div></div><ol class="journey-timeline">{% for step in projectJourney %}<li><span class="journey-number">{{ '%02d'|format(step.number) }}</span><div><h3>{{ step.title }}</h3><p>{{ step.body }}</p></div></li>{% endfor %}</ol></div></section>{% endif %}
+
+  <section class="section band-cta band-cta-forest"><div class="container band-cta-inner"><div><p class="eyebrow light">Build with us</p><h2>Have a partnership or project idea?</h2></div><a class="button" href="{{ 'contact'|page }}">Contact the team <span aria-hidden="true">↗</span></a></div></section>
+{% endif %}

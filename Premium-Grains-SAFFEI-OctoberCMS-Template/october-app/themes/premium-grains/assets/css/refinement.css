@@ -1,0 +1,137 @@
+/* Projects-first refinement, editable banners, team and contact surfaces. */
+.page-banner,
+.project-banner{position:relative;min-height:560px;overflow:hidden;background:var(--forest-deep);color:#fff}
+.page-banner-image,
+.project-banner-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.page-banner-overlay,
+.project-banner-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,42,38,.95) 0%,rgba(2,42,38,.78) 48%,rgba(2,42,38,.24) 100%),linear-gradient(0deg,rgba(2,42,38,.82),transparent 55%)}
+.page-banner-mist .page-banner-overlay{background:linear-gradient(90deg,rgba(2,42,38,.94) 0%,rgba(2,42,38,.68) 48%,rgba(2,42,38,.18) 100%),linear-gradient(0deg,rgba(2,42,38,.78),transparent 58%)}
+.page-banner-content,
+.project-banner-content{position:relative;z-index:1;min-height:560px;display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:8vw;align-items:end;padding-top:150px;padding-bottom:78px}
+.page-banner-copy,
+.project-banner-content>div:first-child{max-width:860px}
+.page-banner h1,
+.project-banner h1{max-width:900px;margin:1rem 0 1.4rem;color:#fff;font-size:clamp(3.1rem,7vw,6.8rem);line-height:.94;letter-spacing:-.075em}
+.page-banner-lede{max-width:730px;color:rgba(255,255,255,.84)!important;margin:0}
+.page-banner-mark{justify-self:end;width:100%;max-width:250px;min-height:210px;padding:1.5rem;border:1px solid rgba(215,242,157,.36);border-radius:26px;background:rgba(2,42,38,.2);display:grid;gap:.7rem;align-content:start;backdrop-filter:blur(8px)}
+.page-banner-mark span{font:800 clamp(3.2rem,5vw,5rem)/.8 Manrope,sans-serif;letter-spacing:-.09em;color:var(--lime)}
+.page-banner-mark strong{max-width:190px;color:#fff;font:800 1.2rem/1.05 Manrope,sans-serif;letter-spacing:-.04em;text-transform:uppercase}
+.page-banner-mark small{align-self:end;margin-top:auto;color:rgba(255,255,255,.68);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase}
+.project-banner-content{min-height:620px}
+.project-banner-content .page-banner-mark span{font-size:clamp(1.9rem,3vw,3rem);line-height:1}
+.project-banner-content .page-banner-mark{min-height:190px}
+
+.projects-preview{background:#f8faf8}
+.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:3rem}
+.project-grid-list{margin-top:4rem}
+.project-card{overflow:hidden;border-radius:26px;background:#fff;box-shadow:0 18px 48px rgba(5,61,56,.1);display:flex;flex-direction:column;min-height:100%}
+.project-card-media{height:230px;overflow:hidden;background:var(--forest)}
+.project-card-media img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.project-card:hover .project-card-media img{transform:scale(1.04)}
+.project-card-body{display:flex;flex:1;flex-direction:column;align-items:flex-start;padding:1.8rem 2rem 2rem;background:#fff;color:var(--ink)}
+.project-card-forest .project-card-body{background:var(--forest-deep);color:#fff}
+.project-card-top{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.project-card-body h3{margin:2rem 0 .65rem;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.06em}
+.project-card-title{font-weight:800;color:var(--forest)!important;line-height:1.25}
+.project-card-forest .project-card-title{color:var(--lime)!important}
+.project-card-body>p:not(.eyebrow){color:var(--muted);max-width:560px}
+.project-card-forest .project-card-body>p:not(.eyebrow){color:rgba(255,255,255,.7)}
+.project-card-body .text-link{margin-top:auto;padding-top:1.8rem}
+.project-featured{border:1px solid var(--orange);border-radius:999px;padding:.35rem .6rem;color:var(--orange);font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.project-card-forest .project-featured{border-color:var(--lime);color:var(--lime)}
+.project-card-large .project-card-media{height:310px}
+.project-card-large .project-card-body{padding:2.2rem 2.4rem 2.5rem}
+.empty-state{grid-column:1/-1;padding:3rem;border:1px dashed rgba(7,85,77,.3);border-radius:24px;background:#fff}
+.empty-state h2,.empty-state h3{max-width:620px;margin:.7rem 0}
+.empty-state p:last-child{color:var(--muted);margin-bottom:0}
+.motto-band{background:var(--forest-deep);color:#fff;overflow:hidden;position:relative}
+.motto-band:after{content:"";position:absolute;width:500px;height:500px;border:1px solid rgba(167,217,107,.18);border-radius:50%;right:-250px;top:-220px}
+.motto-band-inner{position:relative;z-index:1;text-align:center}
+.motto-band h2{margin:.6rem auto 1rem;color:var(--lime);font-size:clamp(2.7rem,7vw,6rem);letter-spacing:-.08em}
+.motto-band p:last-child{max-width:520px;margin-inline:auto;color:rgba(255,255,255,.68)}
+
+.team-section{background:#f8faf8}
+.team-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:3rem}
+.team-card{overflow:hidden;border-radius:22px;background:#fff;box-shadow:0 14px 40px rgba(5,61,56,.07)}
+.team-photo{height:300px;background:linear-gradient(135deg,var(--forest),var(--leaf));display:flex;align-items:center;justify-content:center;overflow:hidden}
+.team-photo img{width:100%;height:100%;object-fit:cover}
+.team-photo span{font:800 5rem/1 Manrope,sans-serif;color:rgba(255,255,255,.82)}
+.team-card-body{padding:1.5rem 1.6rem 1.8rem}
+.team-card-body h3{margin:.7rem 0 .6rem;font-size:1.4rem}
+.team-card-body>p:last-child{color:var(--muted);font-size:.95rem;margin-bottom:0}
+.team-empty{grid-column:1/-1;display:flex;align-items:center;gap:1.5rem;padding:2rem;border-radius:22px;background:#fff;box-shadow:0 14px 40px rgba(5,61,56,.06)}
+.team-empty-mark{display:flex;width:64px;height:64px;flex:0 0 64px;align-items:center;justify-content:center;border-radius:50%;background:var(--lime);color:var(--forest);font:600 2rem/1 Manrope,sans-serif}
+.team-empty h3{margin:.4rem 0}
+.team-empty p:last-child{color:var(--muted);margin:0}
+
+.project-detail-intro{background:#fff}
+.project-focus-section{background:var(--mist)}
+.project-focus-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:3rem}
+.project-focus-grid article{padding:2rem;background:#fff;border-radius:22px;box-shadow:0 12px 35px rgba(5,61,56,.05)}
+.project-focus-grid h3{margin:1.7rem 0 .6rem;text-transform:uppercase;letter-spacing:.05em;font-size:1rem}
+.project-focus-grid p{color:var(--muted);margin:0}
+.project-journey-section{background:#fff}
+.project-journey-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:10vw}
+
+.contact-page-section{background:var(--mist)}
+.contact-page-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:8vw;align-items:start}
+.contact-page-copy h2{max-width:620px}
+.contact-page-copy>.prose{margin-top:1.4rem}
+.contact-details{display:grid;gap:1.2rem;margin-top:3rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+.contact-details>div{display:flex;flex-direction:column;gap:.25rem}
+.contact-details a{color:var(--forest);font-weight:800}
+.contact-form-card{padding:2.2rem 2.4rem 2.5rem;border-radius:26px;background:var(--forest-deep);color:#fff;box-shadow:0 18px 48px rgba(5,61,56,.18)}
+.contact-form-card h2{margin:.8rem 0 1.8rem;color:#fff}
+.contact-form-card form{display:grid;gap:1rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.contact-form-card label{display:grid;gap:.42rem}
+.contact-form-card label>span{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.contact-form-card label em{font-style:normal;color:rgba(255,255,255,.46);font-weight:500;letter-spacing:0;text-transform:none}
+.contact-form-card input,
+.contact-form-card select,
+.contact-form-card textarea{width:100%;border:1px solid rgba(255,255,255,.19);border-radius:8px;padding:.9rem 1rem;background:rgba(255,255,255,.08);color:#fff;font:inherit;outline:none}
+.contact-form-card select option{color:var(--ink)}
+.contact-form-card input::placeholder,
+.contact-form-card textarea::placeholder{color:rgba(255,255,255,.48)}
+.contact-form-card input:focus,
+.contact-form-card select:focus,
+.contact-form-card textarea:focus{border-color:var(--lime);box-shadow:0 0 0 3px rgba(167,217,107,.16)}
+.contact-form-card textarea{resize:vertical;min-height:140px}
+.contact-form-card .button{justify-self:start;margin-top:.5rem}
+.form-note{margin:0;color:rgba(255,255,255,.52);font-size:.78rem}
+.contact-closer{background:#fff;text-align:center}
+.contact-closer h2{max-width:720px;margin:.5rem auto 0}
+
+.footer-grid{grid-template-columns:1.25fr 1fr .75fr .85fr!important;gap:3rem!important}
+.footer-brand{display:flex;flex-direction:column;gap:1.3rem}
+.footer-brand>p{margin:0!important;max-width:210px}
+.footer-contact,.footer-links,.footer-social{display:flex;flex-direction:column;gap:.48rem;color:rgba(255,255,255,.62);font-size:.88rem}
+.footer-links a,.footer-social a,.footer-contact a{color:rgba(255,255,255,.72)}
+.footer-links a:hover,.footer-social a:hover,.footer-contact a:hover{color:var(--lime)}
+.footer-label{margin-bottom:.45rem;color:var(--lime);font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.footer-social a{display:flex;justify-content:space-between;gap:1rem}
+.footer-social-empty{color:rgba(255,255,255,.42);font-size:.8rem;line-height:1.5}
+.footer-email{color:var(--lime)!important;font-weight:700}
+
+@media(max-width:900px){
+  .page-banner-content,.project-banner-content{grid-template-columns:1fr;gap:2.5rem;min-height:620px;padding-top:140px;padding-bottom:62px}
+  .page-banner-mark{justify-self:start;max-width:230px;min-height:170px}
+  .team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .contact-page-grid,.project-journey-grid{grid-template-columns:1fr;gap:3rem}
+  .footer-grid{grid-template-columns:repeat(2,1fr)!important}
+}
+@media(max-width:720px){
+  .page-banner,.project-banner{min-height:540px}
+  .page-banner-content,.project-banner-content{min-height:540px;padding-top:120px;padding-bottom:42px}
+  .page-banner h1,.project-banner h1{font-size:clamp(2.8rem,14vw,4.8rem)}
+  .page-banner-mark{min-height:145px;max-width:210px;padding:1.2rem}
+  .page-banner-mark span{font-size:3.2rem}
+  .project-grid,.project-focus-grid,.team-grid{grid-template-columns:1fr}
+  .project-card-large .project-card-media{height:240px}
+  .project-card-large .project-card-body,.project-card-body{padding:1.6rem 1.4rem 1.8rem}
+  .team-photo{height:250px}
+  .team-empty{align-items:flex-start;flex-direction:column}
+  .form-row{grid-template-columns:1fr}
+  .contact-form-card{padding:1.7rem 1.25rem 1.8rem}
+  .footer-grid{grid-template-columns:1fr!important;gap:2.3rem!important}
+}

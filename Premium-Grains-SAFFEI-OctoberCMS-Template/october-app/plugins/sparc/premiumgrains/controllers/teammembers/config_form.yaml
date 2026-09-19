@@ -1,0 +1,10 @@
+name: Team member
+modelClass: Sparc\PremiumGrains\Models\TeamMember
+form: ~/plugins/sparc/premiumgrains/models/teammember/fields.yaml
+defaultRedirect: sparc/premiumgrains/teammembers
+create:
+    redirect: sparc/premiumgrains/teammembers/update/:id
+    redirectClose: sparc/premiumgrains/teammembers
+update:
+    redirect: sparc/premiumgrains/teammembers
+    redirectClose: sparc/premiumgrains/teammembers

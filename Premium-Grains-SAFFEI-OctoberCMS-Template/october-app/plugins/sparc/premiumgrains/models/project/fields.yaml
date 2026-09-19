@@ -1,0 +1,67 @@
+fields:
+    slug:
+        label: Slug
+        comment: Lowercase URL identifier, for example saffei.
+        span: left
+    name:
+        label: Project name
+        span: right
+    is_active:
+        label: Published
+        type: switch
+        default: true
+        span: left
+    is_featured:
+        label: Feature on home page
+        type: switch
+        default: false
+        span: right
+    sort_order:
+        label: Sort order
+        type: number
+        default: 1
+        span: left
+
+tabs:
+    fields:
+        kicker:
+            label: Kicker
+            tab: Content
+        title:
+            label: Project title
+            type: textarea
+            size: small
+            tab: Content
+        summary:
+            label: Summary
+            type: textarea
+            size: large
+            tab: Content
+        body:
+            label: Full description
+            type: textarea
+            size: large
+            tab: Content
+        banner_image:
+            label: Banner image
+            comment: Upload or choose the image used on the project page.
+            type: mediafinder
+            mode: image
+            tab: Presentation
+        accent:
+            label: Accent style
+            type: dropdown
+            options:
+                forest: Forest
+                mist: Mist
+                white: White
+            default: forest
+            tab: Presentation
+        stat_label:
+            label: Highlight label
+            tab: Presentation
+            span: left
+        stat_value:
+            label: Highlight value
+            tab: Presentation
+            span: right

@@ -1,0 +1,17 @@
+{% set bannerImage = pageContent.banner_image|default('assets/images/hero-farmer.png') %}
+<section class="page-banner page-banner-{{ tone|default('forest') }}">
+  {% if bannerImage starts with 'assets/' %}
+    <img class="page-banner-image" src="{{ bannerImage|theme }}" alt="{{ pageContent.label|default('Premium Grains') }} banner">
+  {% else %}
+    <img class="page-banner-image" src="{{ bannerImage|media }}" alt="{{ pageContent.label|default('Premium Grains') }} banner">
+  {% endif %}
+  <div class="page-banner-overlay"></div>
+  <div class="container page-banner-content">
+    <div class="page-banner-copy">
+      <p class="eyebrow light">{{ pageContent.kicker|default('Premium Grains') }}</p>
+      <h1>{{ pageContent.title|default(this.page.title) }}</h1>
+      <p class="page-lede page-banner-lede">{{ pageContent.intro|default('Practical value, stronger livelihoods and dependable markets.') }}</p>
+    </div>
+    <div class="page-banner-mark"><span>{{ index|default('01') }}</span><strong>{{ stamp|default(pageContent.label|default('Premium Grains')) }}</strong><small>{{ label|default('Malawi') }}</small></div>
+  </div>
+</section>

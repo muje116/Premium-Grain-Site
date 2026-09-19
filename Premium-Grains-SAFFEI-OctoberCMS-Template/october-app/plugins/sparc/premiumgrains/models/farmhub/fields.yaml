@@ -7,7 +7,7 @@ fields:
         span: right
     metric_value:
         label: Metric value
-        comment: Example: 4 ha or 190.
+        comment: 'Example: 4 ha or 190.'
         span: left
     metric_label:
         label: Metric label

@@ -1,3 +1,6 @@
 1.0.1:
     - Create the Premium Grains content tables
     - create_content_tables.php
+1.0.2:
+    - Add configurable projects, team members and contact messages
+    - create_projects_team_and_contact.php

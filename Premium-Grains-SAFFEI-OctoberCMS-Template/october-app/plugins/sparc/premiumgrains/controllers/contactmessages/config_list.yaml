@@ -1,0 +1,13 @@
+title: Contact messages
+list: ~/plugins/sparc/premiumgrains/models/contactmessage/columns.yaml
+modelClass: Sparc\PremiumGrains\Models\ContactMessage
+noRecordsMessage: No contact messages yet.
+recordsPerPage: 30
+showSetup: true
+showCheckboxes: true
+defaultSort:
+    column: created_at
+    direction: desc
+toolbar:
+    search:
+        prompt: Search messages

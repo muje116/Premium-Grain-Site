@@ -1,23 +1,14 @@
 title = "About"
 url = "/about"
 layout = "default"
-meta_title = "About Premium Grains | Premium Grains x SAFFEI"
+meta_title = "About Premium Grains | Grown, Earn, Thrive"
 meta_description = "Learn how Premium Grains builds a resilient food and commodity business around farmer support, reliable markets and shared value."
 is_hidden = 0
 
 [premiumContent]
 pageCode = "about"
 ==
-<section class="page-hero page-hero-mist">
-  <div class="container page-hero-grid">
-    <div>
-      <p class="eyebrow orange">{{ pageContent.kicker }}</p>
-      <h1>{{ pageContent.title }}</h1>
-      <p class="page-lede">{{ pageContent.intro }}</p>
-    </div>
-    <div class="page-stamp"><span>01</span><strong>Field<br>to market</strong><small>Premium Grains x SAFFEI</small></div>
-  </div>
-</section>
+{% partial 'site/page-banner' tone='mist' index='01' stamp='Field to market' label='Premium Grains' %}
 
 <section class="section about-detail">
   <div class="container narrative-grid">
@@ -27,6 +18,22 @@ pageCode = "about"
   <div class="container purpose-band">
     <article><p class="eyebrow light">Our purpose</p><p>{{ site.purpose }}</p></article>
     <article class="purpose-band-accent"><p class="eyebrow orange">Our approach</p><p>{{ site.approach }}</p></article>
+  </div>
+</section>
+
+<section class="section team-section">
+  <div class="container section-head"><div><p class="eyebrow orange">The people behind the work</p><h2>People, partnerships and practical delivery.</h2></div><p>Our team profiles are managed from the CMS so the people doing the work can be introduced with the right context, image and story.</p></div>
+  <div class="container team-grid">
+    {% for member in teamMembers %}
+      <article class="team-card">
+        <div class="team-photo">
+          {% if member.image and member.image starts with 'assets/' %}<img src="{{ member.image|theme }}" alt="{{ member.name }}">{% elseif member.image %}<img src="{{ member.image|media }}" alt="{{ member.name }}">{% else %}<span aria-hidden="true">{{ member.name|slice(0, 1)|upper }}</span>{% endif %}
+        </div>
+        <div class="team-card-body"><p class="eyebrow orange">{{ member.role }}</p><h3>{{ member.name }}</h3>{% if member.bio %}<p>{{ member.bio }}</p>{% endif %}</div>
+      </article>
+    {% else %}
+      <div class="team-empty"><span class="team-empty-mark" aria-hidden="true">+</span><div><p class="eyebrow orange">Team profiles coming soon</p><h3>We are preparing the people page for launch.</h3><p>Team members, roles, portraits and biographies can be added from the Premium Grains backend.</p></div></div>
+    {% endfor %}
   </div>
 </section>
 

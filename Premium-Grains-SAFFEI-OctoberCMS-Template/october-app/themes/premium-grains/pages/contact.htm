@@ -1,0 +1,20 @@
+title = "Contact"
+url = "/contact"
+layout = "default"
+meta_title = "Contact Premium Grains"
+meta_description = "Contact the Premium Grains team about partnerships, projects, farmer support and agricultural markets."
+is_hidden = 0
+
+[premiumContent]
+pageCode = "contact"
+==
+{% partial 'site/page-banner' tone='forest' index='07' stamp='Start a conversation' label='Premium Grains · Malawi' %}
+
+<section class="section contact-page-section">
+  <div class="container contact-page-grid">
+    <div class="contact-page-copy"><p class="eyebrow orange">We would like to hear from you</p><h2>Good work starts with a useful conversation.</h2><p class="prose">Whether you want to partner, learn more about a project, connect around farmers or explore a route to market, send a note and our team will follow up.</p><div class="contact-details"><div><span class="footer-label">Email</span><a href="mailto:{{ site.partnership_email }}">{{ site.partnership_email|default('hello@premiumgrains.mw') }}</a></div>{% if site.contact_phone %}<div><span class="footer-label">Phone</span><a href="tel:{{ site.contact_phone|replace({' ': ''}) }}">{{ site.contact_phone }}</a></div>{% endif %}<div><span class="footer-label">On the ground</span><span>{{ site.location_one|default('Kasiya, Lilongwe') }}</span><span>{{ site.location_two|default('Mpherembe, Mzimba') }}</span></div></div></div>
+    <div class="contact-form-card"><p class="eyebrow light">Contact us</p><h2>Tell us what you are building.</h2><form data-request="premiumContent::onSubmitContact" data-request-flash data-contact-form><div class="form-row"><label><span>Name</span><input type="text" name="name" required maxlength="160" placeholder="Your name"></label><label><span>Email</span><input type="email" name="email" required maxlength="190" placeholder="you@example.com"></label></div><div class="form-row"><label><span>Phone number <em>optional</em></span><input type="tel" name="phone" maxlength="60" placeholder="+265"></label><label><span>Enquiry type</span><select name="enquiry_type" required><option value="">Choose one</option><option value="Partnership">Partnership</option><option value="Project information">Project information</option><option value="Farmer support">Farmer support</option><option value="Markets and off-take">Markets and off-take</option><option value="General enquiry">General enquiry</option></select></label></div><label><span>Message</span><textarea name="message" required maxlength="5000" rows="6" placeholder="How can we help?"></textarea></label><button class="button button-large" type="submit" data-attach-loading>Send enquiry <span aria-hidden="true">↗</span></button><p class="form-note">Your message will be saved in the Premium Grains CMS inbox for follow-up.</p></form></div>
+  </div>
+</section>
+
+<section class="section contact-closer"><div class="container contact-closer-inner"><p class="eyebrow orange">Grown, Earn, Thrive</p><h2>Practical value travels further when it is shared.</h2></div></section>

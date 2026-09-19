@@ -32,6 +32,12 @@ tabs:
             type: textarea
             size: large
             tab: Content
+        banner_image:
+            label: Banner image
+            comment: Upload or choose the image shown on this page banner.
+            type: mediafinder
+            mode: image
+            tab: Content
         meta_title:
             label: Meta title
             tab: Search

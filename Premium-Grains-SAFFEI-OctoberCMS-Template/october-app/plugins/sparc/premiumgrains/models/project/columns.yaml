@@ -1,15 +1,18 @@
 columns:
-    label:
-        label: Page
+    name:
+        label: Project
         searchable: true
         sortable: true
-    code:
-        label: Code
+    slug:
+        label: Slug
         searchable: true
+    stat_value:
+        label: Highlight
+        searchable: true
+    is_featured:
+        label: Featured
+        type: switch
         sortable: true
-    banner_image:
-        label: Banner
-        type: image
     is_active:
         label: Published
         type: switch
