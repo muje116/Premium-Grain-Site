@@ -57,6 +57,8 @@ After signing in, use the **Premium Grains** menu in the backend to manage:
 
 Use **Settings → Premium Grains** for the brand name, descriptor, hero image, purpose, contact email, phone, address, locations, motto, footer copy and social media URLs. The public pages read these records through the `premiumContent` component, so content changes do not require editing Twig templates.
 
+Migration `1.0.3` adds three clearly marked demo team profiles plus example contact and social media values so the editable surfaces are populated during review. Replace those values with approved launch information before publishing. Each public page has its own generated banner image, and the shared layout includes an animated closing landscape section with reduced-motion support.
+
 The main public navigation is **About**, **Our model**, **Projects**, **Farm hubs**, **Contact** and **Partner with us**. The former `/saffei` and `/journey` URLs redirect into the SAFFEI project detail route at `/projects/saffei`.
 
 ## Source-content note

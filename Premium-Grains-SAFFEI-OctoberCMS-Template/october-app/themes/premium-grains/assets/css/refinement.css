@@ -113,12 +113,26 @@
 .footer-social-empty{color:rgba(255,255,255,.42);font-size:.8rem;line-height:1.5}
 .footer-email{color:var(--lime)!important;font-weight:700}
 
+.bottom-image-cta{position:relative;min-height:470px;overflow:hidden;background:var(--forest-deep);color:#fff}
+.bottom-image-cta-image{position:absolute;inset:-4% 0;width:100%;height:108%;object-fit:cover;transform:scale(1.08);will-change:transform}
+.bottom-image-cta-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,42,38,.9) 0%,rgba(2,42,38,.62) 48%,rgba(2,42,38,.25) 100%),linear-gradient(0deg,rgba(2,42,38,.76),transparent 70%)}
+.bottom-image-cta-content{position:relative;z-index:1;display:flex;min-height:470px;padding-top:7rem;padding-bottom:6rem;flex-direction:column;align-items:flex-start;justify-content:center}
+.bottom-image-cta h2{max-width:620px;margin:.65rem 0 .85rem;color:#fff;font-size:clamp(3rem,7vw,6.4rem);line-height:.95;letter-spacing:-.08em}
+.bottom-image-cta p:not(.eyebrow){max-width:480px;margin:0 0 1.8rem;color:rgba(255,255,255,.76);font-size:1.08rem}
+
+[data-reveal]{opacity:0;transform:translate3d(0,28px,0);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.72,.24,1);transition-delay:var(--reveal-delay,0ms)}
+[data-reveal="left"]{transform:translate3d(-28px,0,0)}
+[data-reveal="right"]{transform:translate3d(28px,0,0)}
+[data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0)}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1!important;transform:none!important;transition:none!important}.bottom-image-cta-image{transform:scale(1.04)!important}}
+
 @media(max-width:900px){
   .page-banner-content,.project-banner-content{grid-template-columns:1fr;gap:2.5rem;min-height:620px;padding-top:140px;padding-bottom:62px}
   .page-banner-mark{justify-self:start;max-width:230px;min-height:170px}
   .team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .contact-page-grid,.project-journey-grid{grid-template-columns:1fr;gap:3rem}
   .footer-grid{grid-template-columns:repeat(2,1fr)!important}
+  .bottom-image-cta-content{margin-inline:auto;padding-top:6rem;padding-bottom:5rem}
 }
 @media(max-width:720px){
   .page-banner,.project-banner{min-height:540px}
@@ -134,4 +148,6 @@
   .form-row{grid-template-columns:1fr}
   .contact-form-card{padding:1.7rem 1.25rem 1.8rem}
   .footer-grid{grid-template-columns:1fr!important;gap:2.3rem!important}
+  .bottom-image-cta,.bottom-image-cta-content{min-height:420px}
+  .bottom-image-cta-content{padding-top:5rem;padding-bottom:4rem}
 }

@@ -4,3 +4,6 @@
 1.0.2:
     - Add configurable projects, team members and contact messages
     - create_projects_team_and_contact.php
+1.0.3:
+    - Seed demo team, contact and social media data and distinct page imagery
+    - seed_demo_team_contact.php
