@@ -1,7 +1,7 @@
 title = "Partner with us"
 url = "/partner"
 layout = "default"
-meta_title = "Partner with Premium Grains | Grown, Earn, Thrive"
+meta_title = "Partner with Premium Grains Limited | Grow. Earn. Thrive."
 meta_description = "Partner with Premium Grains to connect organised farmers, field presence and dependable agricultural demand."
 is_hidden = 0
 
@@ -11,7 +11,7 @@ pageCode = "partner"
 {% partial 'site/page-banner' tone='mist' index='06' stamp='Shared value, built together' label='Premium Grains' %}
 
 <section class="section partner-detail">
-  <div class="container partner-detail-intro"><div><p class="eyebrow">Why partner with us?</p><h2>A practical bridge between community-level implementation and commercial agricultural demand.</h2></div><div class="prose"><p>Premium Grains brings together a functioning commercial route, practical field presence and an organised farmer structure.</p><p>That combination helps partners move from intent to implementation, with a clearer path from farmer effort to reliable supply and shared value.</p></div></div>
+  <div class="container partner-detail-intro"><div><p class="eyebrow">Why partner with us?</p><h2>A practical bridge between community-level implementation and commercial agricultural demand.</h2></div><div class="prose"><p>{{ pageContent.intro }}</p><p>Whether the opportunity begins with one farmer, one hectare or one market, our ambition is to build agriculture that grows businesses, strengthens communities and creates lasting prosperity.</p></div></div>
   <div class="container partner-detail-grid">
     {% for point in partnerPoints %}<article><span>{{ '%02d'|format(point.number) }}</span><h3>{{ point.title }}</h3><p>{{ point.body }}</p></article>{% endfor %}
   </div>

@@ -48,8 +48,11 @@ After signing in, use the **Premium Grains** menu in the backend to manage:
 - Pages and SEO metadata
 - A reusable banner image for every page
 - Projects and project content items, with SAFFEI seeded as the first project
+- Project video and field gallery paths, with SAFFEI media seeded from the supplied field assets
 - Vision, mission and values
 - The five-part agribusiness model
+- Company facts and figures such as hectares, irrigation schemes, farmers, lead farmers and sales hubs
+- Produce and trade lines covering the company crop and horticultural portfolio
 - Kasiya and Mpherembe farm hubs
 - Partnership points
 - Team members, portraits and biographies
@@ -57,10 +60,10 @@ After signing in, use the **Premium Grains** menu in the backend to manage:
 
 Use **Settings → Premium Grains** for the brand name, descriptor, hero image, purpose, contact email, phone, address, locations, motto, footer copy and social media URLs. The public pages read these records through the `premiumContent` component, so content changes do not require editing Twig templates.
 
-Migration `1.0.3` adds three clearly marked demo team profiles plus example contact and social media values so the editable surfaces are populated during review. Replace those values with approved launch information before publishing. Each public page has its own generated banner image, and the shared layout includes an animated closing landscape section with reduced-motion support.
+Migration `1.0.3` adds three clearly marked demo team profiles plus example contact and social media values so the editable surfaces are populated during review. Migration `1.0.4` applies the Premium Grains Limited portfolio content, company facts, produce lines and supplied SAFFEI field media. Replace demo contact, social and team values with approved launch information before publishing. Each public page has its own banner image, and the shared layout includes an animated closing landscape section with reduced-motion support.
 
-The main public navigation is **About**, **Our model**, **Projects**, **Farm hubs**, **Contact** and **Partner with us**. The former `/saffei` and `/journey` URLs redirect into the SAFFEI project detail route at `/projects/saffei`.
+The main public navigation is **About**, **Our model**, **Produce & trade**, **Projects**, **Farm hubs**, **Contact** and **Partner with us**. The former `/saffei` and `/journey` URLs redirect into the SAFFEI project detail route at `/projects/saffei`.
 
 ## Source-content note
 
-The attached profile supplies the factual brand, programme, location and partnership content used in the seeded records. The original generated theme’s launch notes treated the partnership email and hero photography as placeholders; those are intentionally editable in the backend and should be confirmed before launch.
+The attached portfolio supplies the factual company, programme, location, production, market and partnership content used in the seeded records. The original generated theme’s launch notes treated the partnership email and hero photography as placeholders; those are intentionally editable in the backend and should be confirmed before launch. SAFFEI is intentionally represented as one project under Premium Grains Limited, not as the company brand.

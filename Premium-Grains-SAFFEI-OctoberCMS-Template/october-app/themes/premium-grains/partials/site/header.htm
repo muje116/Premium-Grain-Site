@@ -1,9 +1,10 @@
 <header class="site-header{% if this.page.id != 'home' %} site-header-solid{% endif %}" data-header>
   <div class="container nav-wrap">
-    <a class="brand" href="{{ 'home'|page }}" aria-label="{{ site.brand_name|default('Premium Grains') }} home"><img src="{{ 'assets/images/brand-lockup.png'|theme }}" alt="{{ site.brand_name|default('Premium Grains') }} {{ site.brand_descriptor|default('Projects & partnerships') }}"></a>
+    <a class="brand" href="{{ 'home'|page }}" aria-label="{{ site.brand_name|default('Premium Grains Limited') }} home"><img src="{{ 'assets/images/brand-lockup.png'|theme }}" alt="{{ site.brand_name|default('Premium Grains Limited') }} {{ site.brand_descriptor|default('Integrated agribusiness') }}"></a>
     <nav class="desktop-nav" aria-label="Main navigation">
       <a href="{{ 'about'|page }}">About</a>
       <a href="{{ 'model'|page }}">Our model</a>
+      <a href="{{ 'produce'|page }}">{{ pages.produce.label|default('Produce & trade') }}</a>
       <a href="{{ 'projects'|page }}">Projects</a>
       <a href="{{ 'hubs'|page }}">Farm hubs</a>
       <a href="{{ 'contact'|page }}">Contact</a>
@@ -14,6 +15,7 @@
   <nav class="mobile-nav" id="mobile-menu" aria-label="Mobile navigation">
     <a href="{{ 'about'|page }}">About</a>
     <a href="{{ 'model'|page }}">Our model</a>
+    <a href="{{ 'produce'|page }}">{{ pages.produce.label|default('Produce & trade') }}</a>
     <a href="{{ 'projects'|page }}">Projects</a>
     <a href="{{ 'hubs'|page }}">Farm hubs</a>
     <a href="{{ 'contact'|page }}">Contact</a>

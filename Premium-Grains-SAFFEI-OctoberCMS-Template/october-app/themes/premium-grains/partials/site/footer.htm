@@ -1,8 +1,8 @@
 <footer>
   <div class="container footer-grid">
     <div class="footer-brand">
-      <a class="brand" href="{{ 'home'|page }}" aria-label="{{ site.brand_name|default('Premium Grains') }} home"><img src="{{ 'assets/images/brand-lockup.png'|theme }}" alt="{{ site.brand_name|default('Premium Grains') }} {{ site.brand_descriptor|default('Projects & partnerships') }}"></a>
-      <p>{{ site.footer_tagline|default('Growing value. Strengthening farmers.') }}</p>
+      <a class="brand" href="{{ 'home'|page }}" aria-label="{{ site.brand_name|default('Premium Grains Limited') }} home"><img src="{{ 'assets/images/brand-lockup.png'|theme }}" alt="{{ site.brand_name|default('Premium Grains Limited') }} {{ site.brand_descriptor|default('Integrated agribusiness') }}"></a>
+      <p>{{ site.footer_tagline|default('Growing markets. Empowering farmers. Building resilient agriculture.') }}</p>
     </div>
     <div class="footer-contact">
       <span class="footer-label">Contact</span>
@@ -15,6 +15,7 @@
     <div class="footer-links">
       <span class="footer-label">Explore</span>
       <a href="{{ 'about'|page }}">About us</a>
+      <a href="{{ 'produce'|page }}">Produce & trade</a>
       <a href="{{ 'projects'|page }}">Projects</a>
       <a href="{{ 'partner'|page }}">Partner with us</a>
       <a href="{{ 'contact'|page }}">Contact us</a>
@@ -28,5 +29,5 @@
       {% if not site.facebook_url and not site.instagram_url and not site.linkedin_url and not site.x_url %}<span class="footer-social-empty">Social links can be added from Settings.</span>{% endif %}
     </div>
   </div>
-  <div class="container footer-bottom"><span>© {{ 'now'|date('Y') }} {{ site.brand_name|default('Premium Grains') }} Ltd</span><span>{{ site.motto|default('Grown, Earn, Thrive') }}</span></div>
+  <div class="container footer-bottom"><span>© {{ 'now'|date('Y') }} {{ site.brand_name|default('Premium Grains Limited') }}</span><span>{{ site.motto|default('Grow. Earn. Thrive.') }}</span></div>
 </footer>

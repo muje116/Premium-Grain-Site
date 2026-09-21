@@ -41,6 +41,20 @@ tabs:
             type: textarea
             size: large
             tab: About
+        farmer_quote:
+            label: Farmer voice quote
+            type: textarea
+            size: large
+            tab: About
+        farmer_quote_author:
+            label: Farmer voice attribution
+            tab: About
+            span: left
+        learning_centres_note:
+            label: Learning centres and farms note
+            type: textarea
+            size: large
+            tab: About
         partnership_email:
             label: Contact email
             type: email

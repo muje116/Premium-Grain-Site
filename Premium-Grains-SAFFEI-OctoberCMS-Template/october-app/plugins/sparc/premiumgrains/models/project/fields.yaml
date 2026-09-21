@@ -48,6 +48,16 @@ tabs:
             type: mediafinder
             mode: image
             tab: Presentation
+        video_path:
+            label: Project video path
+            comment: Theme or Media Library path, for example assets/media/saffei-field.mp4.
+            tab: Presentation
+        gallery_images:
+            label: Gallery image paths
+            comment: Enter one theme or Media Library image path per line.
+            type: textarea
+            size: large
+            tab: Presentation
         accent:
             label: Accent style
             type: dropdown

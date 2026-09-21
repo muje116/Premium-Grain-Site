@@ -1,8 +1,8 @@
 title = "Home"
 url = "/"
 layout = "default"
-meta_title = "Premium Grains | Grown, Earn, Thrive"
-meta_description = "Premium Grains is a Malawian agribusiness building practical value from farm production to dependable markets."
+meta_title = "Premium Grains Limited | Growing markets. Empowering farmers."
+meta_description = "Premium Grains Limited is a Malawian integrated agribusiness and social enterprise building profitable, sustainable and inclusive agricultural value chains."
 is_hidden = 0
 
 [premiumContent]
@@ -19,8 +19,8 @@ pageCode = "home"
   <div class="hero-shade"></div>
   <div class="container hero-content">
     <p class="eyebrow light">{{ pageContent.kicker|default('Premium Grains') }}</p>
-    <h1>{{ pageContent.title|default('Growing value.\nStrengthening farmers.')|nl2br }}</h1>
-    <p class="hero-copy">{{ pageContent.intro|default('A modern Malawian agribusiness rooted in production, dependable markets and stronger livelihoods.') }}</p>
+    <h1>{{ pageContent.title|default('Growing markets.\nEmpowering farmers.\nBuilding resilient agriculture.')|nl2br }}</h1>
+    <p class="hero-copy">{{ pageContent.intro|default('Malawi | Integrated Agribusiness | Social Enterprise') }}</p>
     <div class="hero-actions">
       <a class="button" href="{{ site.hero_cta_url|default('/our-model') }}">{{ site.hero_cta_label|default('Explore our model') }} <span aria-hidden="true">↓</span></a>
       <a class="text-link light-link" href="{{ 'partner'|page }}">Work with us <span aria-hidden="true">↗</span></a>
@@ -29,7 +29,16 @@ pageCode = "home"
   <div class="container hero-foot">
     <span>{{ site.location_one|default('Kasiya, Lilongwe') }}</span>
     <span>{{ site.location_two|default('Mpherembe, Mzimba') }}</span>
-    <strong>{{ site.motto|default('Grown, Earn, Thrive') }}</strong>
+    <strong>{{ site.motto|default('Grow. Earn. Thrive.') }}</strong>
+  </div>
+</section>
+
+<section class="section company-stats-section" id="footprint">
+  <div class="container section-head"><div><p class="eyebrow orange">At a glance</p><h2>Built at field scale.</h2></div><p>Our footprint connects production, farmer development, aggregation and market access across Malawi.</p></div>
+  <div class="container company-stat-grid">
+    {% for stat in companyStats %}
+      <article class="company-stat-card"><strong>{{ stat.value }}</strong><span>{{ stat.label }}</span>{% if stat.context %}<p>{{ stat.context }}</p>{% endif %}</article>
+    {% endfor %}
   </div>
 </section>
 
@@ -40,7 +49,7 @@ pageCode = "home"
       <h2>{{ pages.about.title|default('Building the path from field to market.') }}</h2>
     </div>
     <div class="intro-copy">
-      <p>{{ pages.about.intro|default('Premium Grains Ltd works with farmers, cooperatives, buyers and partners to strengthen supply, improve quality and create sustainable income across agricultural value chains.') }}</p>
+      <p>{{ pages.about.intro|default('Premium Grains Limited is a Malawian integrated agribusiness and social enterprise building profitable, sustainable and inclusive agricultural value chains.') }}</p>
       <p>{{ site.purpose|default('Our purpose is to grow a resilient food and commodity business that gives farmers practical support, dependable markets and opportunities to earn and thrive.') }}</p>
     </div>
   </div>
@@ -53,6 +62,16 @@ pageCode = "home"
       </article>
     {% endfor %}
   </div>
+</section>
+
+<section class="section produce-preview" id="produce">
+  <div class="container section-head"><div><p class="eyebrow orange">What we produce & trade</p><h2>From production to profitable markets.</h2></div><p>Premium Grains participates across crop, horticultural and value-addition opportunities, moving beyond farm-level production into aggregation, distribution and export.</p></div>
+  <div class="container produce-preview-grid">
+    {% for line in produceLines %}
+      <article class="produce-chip"><span>{{ '%02d'|format(line.sort_order) }}</span><h3>{{ line.name }}</h3><p>{{ line.descriptor }}</p></article>
+    {% endfor %}
+  </div>
+  <div class="container"><a class="inline-link" href="{{ 'produce'|page }}">Explore produce & trade <span aria-hidden="true">↗</span></a></div>
 </section>
 
 <section class="section model" id="model">
@@ -103,7 +122,7 @@ pageCode = "home"
 </section>
 
 <section class="section motto-band">
-  <div class="container motto-band-inner"><p class="eyebrow light">Our promise</p><h2>{{ site.motto|default('Grown, Earn, Thrive') }}</h2><p>Commercial progress should strengthen the people and places that make it possible.</p></div>
+  <div class="container motto-band-inner"><p class="eyebrow light">Our promise</p><h2>{{ site.motto|default('Grow. Earn. Thrive.') }}</h2><p>Commercial progress should strengthen the people and places that make it possible.</p></div>
 </section>
 
 <section class="section hubs" id="hubs">

@@ -1,0 +1,16 @@
+columns:
+    name:
+        label: Produce or value chain
+        searchable: true
+        sortable: true
+    descriptor:
+        label: Descriptor
+        searchable: true
+    is_active:
+        label: Published
+        type: switch
+        sortable: true
+    sort_order:
+        label: Order
+        type: number
+        sortable: true

@@ -23,7 +23,27 @@ projectSlug = "{{ :slug }}"
 
   {% if projectPoints|length %}<section class="section project-focus-section"><div class="container section-head"><div><p class="eyebrow orange">What it focuses on</p><h2>The work is designed around real conditions.</h2></div><p>Each focus area gives the project a clear promise in the field and a practical way to measure progress.</p></div><div class="container project-focus-grid">{% for point in projectPoints %}<article><span class="focus-badge">{{ '%02d'|format(point.number) }}</span><h3>{{ point.title }}</h3><p>{{ point.body }}</p></article>{% endfor %}</div></section>{% endif %}
 
-  {% if projectJourney|length %}<section class="section project-journey-section" id="journey"><div class="container project-journey-grid"><div class="journey-detail-copy"><p class="eyebrow orange">The journey</p><h2>Progress is a cycle, not a single moment.</h2><p class="prose">The project moves through a sequence that helps farmers and partners turn preparation into production, income and the next opportunity.</p><div class="result result-large"><span>Our motto</span><strong>{{ site.motto|default('Grown, Earn, Thrive') }}</strong></div></div><ol class="journey-timeline">{% for step in projectJourney %}<li><span class="journey-number">{{ '%02d'|format(step.number) }}</span><div><h3>{{ step.title }}</h3><p>{{ step.body }}</p></div></li>{% endfor %}</ol></div></section>{% endif %}
+  {% if project.video_path or project.gallery_images_list|length %}
+    <section class="section project-media-section">
+      <div class="container section-head"><div><p class="eyebrow orange">In the field</p><h2>Work you can see on the ground.</h2></div><p>These project assets can be replaced or extended from the project record in the backend.</p></div>
+      {% if project.video_path %}
+        <div class="container project-video-card">
+          <video controls preload="metadata" poster="{{ 'assets/images/banners/project-saffei-farmer.png'|theme }}" aria-label="{{ project.name }} field video">
+            {% if project.video_path starts with 'assets/' %}<source src="{{ project.video_path|theme }}" type="video/mp4">{% else %}<source src="{{ project.video_path|media }}" type="video/mp4">{% endif %}
+          </video>
+        </div>
+      {% endif %}
+      {% if project.gallery_images_list|length %}
+        <div class="container project-gallery-grid">
+          {% for image in project.gallery_images_list %}
+            <figure class="project-gallery-card">{% if image starts with 'assets/' %}<img src="{{ image|theme }}" alt="{{ project.name }} field activity {{ loop.index }}">{% else %}<img src="{{ image|media }}" alt="{{ project.name }} field activity {{ loop.index }}">{% endif %}</figure>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </section>
+  {% endif %}
+
+  {% if projectJourney|length %}<section class="section project-journey-section" id="journey"><div class="container project-journey-grid"><div class="journey-detail-copy"><p class="eyebrow orange">The journey</p><h2>Progress is a cycle, not a single moment.</h2><p class="prose">The project moves through a sequence that helps farmers and partners turn preparation into production, income and the next opportunity.</p><div class="result result-large"><span>Our motto</span><strong>{{ site.motto|default('Grow. Earn. Thrive.') }}</strong></div></div><ol class="journey-timeline">{% for step in projectJourney %}<li><span class="journey-number">{{ '%02d'|format(step.number) }}</span><div><h3>{{ step.title }}</h3><p>{{ step.body }}</p></div></li>{% endfor %}</ol></div></section>{% endif %}
 
   <section class="section band-cta band-cta-forest"><div class="container band-cta-inner"><div><p class="eyebrow light">Build with us</p><h2>Have a partnership or project idea?</h2></div><a class="button" href="{{ 'contact'|page }}">Contact the team <span aria-hidden="true">↗</span></a></div></section>
 {% endif %}

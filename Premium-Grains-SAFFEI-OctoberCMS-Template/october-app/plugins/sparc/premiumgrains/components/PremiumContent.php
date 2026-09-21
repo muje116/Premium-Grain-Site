@@ -15,6 +15,8 @@ use Sparc\PremiumGrains\Models\ProjectPoint;
 use Sparc\PremiumGrains\Models\Settings;
 use Sparc\PremiumGrains\Models\TeamMember;
 use Sparc\PremiumGrains\Models\ContactMessage;
+use Sparc\PremiumGrains\Models\CompanyStat;
+use Sparc\PremiumGrains\Models\ProduceLine;
 
 class PremiumContent extends ComponentBase
 {
@@ -64,6 +66,9 @@ class PremiumContent extends ComponentBase
         $this->page['modelSteps'] = ModelStep::where('is_active', true)->orderBy('sort_order')->get();
         $this->page['farmHubs'] = FarmHub::where('is_active', true)->orderBy('sort_order')->get();
         $this->page['partnerPoints'] = PartnerPoint::where('is_active', true)->orderBy('sort_order')->get();
+        $this->page['companyStats'] = CompanyStat::where('is_active', true)->orderBy('sort_order')->get();
+        $this->page['companyStatsBySlug'] = $this->page['companyStats']->keyBy('slug');
+        $this->page['produceLines'] = ProduceLine::where('is_active', true)->orderBy('sort_order')->get();
 
         $projectSlug = $this->property('projectSlug') ?: Request::route('slug');
         $project = $projectSlug

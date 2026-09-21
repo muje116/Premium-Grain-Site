@@ -1,0 +1,15 @@
+title: Company facts
+list: ~/plugins/sparc/premiumgrains/models/companystat/columns.yaml
+modelClass: Sparc\PremiumGrains\Models\CompanyStat
+recordUrl: sparc/premiumgrains/companystats/update/:id
+noRecordsMessage: backend::lang.list.no_records
+recordsPerPage: 30
+showSetup: true
+showCheckboxes: true
+defaultSort:
+    column: sort_order
+    direction: asc
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: Search company facts

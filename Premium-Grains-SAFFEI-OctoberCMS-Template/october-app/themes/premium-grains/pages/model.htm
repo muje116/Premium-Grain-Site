@@ -2,16 +2,16 @@ title = "Our model"
 url = "/our-model"
 layout = "default"
 meta_title = "Our model | Premium Grains"
-meta_description = "Explore the connected Premium Grains cycle: produce, support, aggregate, off-take and grow."
+meta_description = "Explore the connected Premium Grains value chain from seed and farmer support through production, aggregation, sales hubs, domestic markets, export and growth."
 is_hidden = 0
 
 [premiumContent]
 pageCode = "model"
 ==
-{% partial 'site/page-banner' tone='mist' index='02' stamp='One connected cycle' label='Produce · Support · Grow' %}
+{% partial 'site/page-banner' tone='mist' index='02' stamp='Seed to market' label='Production · Markets · Growth' %}
 
 <section class="section model-detail">
-  <div class="container section-head"><div><p class="eyebrow">The operating cycle</p><h2>Each part reinforces the next.</h2></div><p>Production creates the supply. Support makes it stronger. Aggregation and off-take turn effort into reliable market value.</p></div>
+  <div class="container section-head"><div><p class="eyebrow">The operating cycle</p><h2>Each part reinforces the next.</h2></div><p>{{ pageContent.intro }}</p></div>
   <div class="container model-steps">
     {% for step in modelSteps %}
       <article class="model-step-card">
@@ -23,7 +23,7 @@ pageCode = "model"
 </section>
 
 <section class="section cycle-band">
-  <div class="container cycle-band-grid"><div><p class="eyebrow light">The value loop</p><h2>Commercial discipline, farmer development and market access in one rhythm.</h2></div><div class="cycle-wordmark"><span>Produce</span><i>+</i><span>Support</span><i>+</i><span>Aggregate</span><i>+</i><span>Off-take</span><i>+</i><span>Grow</span></div></div>
+  <div class="container cycle-band-grid"><div><p class="eyebrow light">The value loop</p><h2>Commercial discipline, farmer development and market access in one rhythm.</h2></div><div class="cycle-wordmark">{% for step in modelSteps %}<span>{{ step.title }}</span>{% if not loop.last %}<i>+</i>{% endif %}{% endfor %}</div></div>
 </section>
 
 <section class="section band-cta">

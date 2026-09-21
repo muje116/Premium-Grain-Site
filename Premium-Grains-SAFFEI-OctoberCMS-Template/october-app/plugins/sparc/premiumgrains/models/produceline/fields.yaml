@@ -1,0 +1,26 @@
+fields:
+    name:
+        label: Produce or value chain
+        span: left
+    descriptor:
+        label: Descriptor
+        span: right
+    body:
+        label: Description
+        type: textarea
+        size: large
+    image:
+        label: Supporting image
+        comment: Optional theme or Media Library image path.
+        type: mediafinder
+        mode: image
+    sort_order:
+        label: Sort order
+        type: number
+        default: 1
+        span: left
+    is_active:
+        label: Published
+        type: switch
+        default: true
+        span: right

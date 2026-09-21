@@ -8,7 +8,7 @@ class Project extends Model
 
     protected $fillable = [
         'slug', 'name', 'kicker', 'title', 'summary', 'body', 'banner_image',
-        'stat_label', 'stat_value', 'accent', 'is_featured', 'is_active', 'sort_order',
+        'video_path', 'gallery_images', 'stat_label', 'stat_value', 'accent', 'is_featured', 'is_active', 'sort_order',
     ];
 
     protected $casts = [
@@ -27,4 +27,9 @@ class Project extends Model
     public $hasMany = [
         'points' => [ProjectPoint::class, 'key' => 'project_id'],
     ];
+
+    public function getGalleryImagesListAttribute(): array
+    {
+        return preg_split('/\r\n|\r|\n/', trim((string) $this->gallery_images), -1, PREG_SPLIT_NO_EMPTY);
+    }
 }

@@ -98,6 +98,16 @@ class Plugin extends PluginBase
                         'icon' => 'icon-briefcase',
                         'url' => Backend::url('sparc/premiumgrains/partnerpoints'),
                     ],
+                    'companystats' => [
+                        'label' => 'Company facts',
+                        'icon' => 'icon-bar-chart',
+                        'url' => Backend::url('sparc/premiumgrains/companystats'),
+                    ],
+                    'producelines' => [
+                        'label' => 'Produce & trade',
+                        'icon' => 'icon-leaf',
+                        'url' => Backend::url('sparc/premiumgrains/producelines'),
+                    ],
                     'contactmessages' => [
                         'label' => 'Contact messages',
                         'icon' => 'icon-envelope',

@@ -7,3 +7,6 @@
 1.0.3:
     - Seed demo team, contact and social media data and distinct page imagery
     - seed_demo_team_contact.php
+1.0.4:
+    - Apply Premium Grains portfolio content and configurable produce and company facts
+    - apply_portfolio_content.php

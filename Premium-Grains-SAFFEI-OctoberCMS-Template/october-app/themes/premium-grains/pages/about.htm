@@ -1,7 +1,7 @@
 title = "About"
 url = "/about"
 layout = "default"
-meta_title = "About Premium Grains | Grown, Earn, Thrive"
+meta_title = "About Premium Grains Limited | Grow. Earn. Thrive."
 meta_description = "Learn how Premium Grains builds a resilient food and commodity business around farmer support, reliable markets and shared value."
 is_hidden = 0
 
@@ -12,13 +12,26 @@ pageCode = "about"
 
 <section class="section about-detail">
   <div class="container narrative-grid">
-    <div><p class="eyebrow">Our purpose</p><h2>A resilient food and commodity business built around practical value.</h2></div>
+    <div><p class="eyebrow">Our purpose</p><h2>Integrated agriculture for profitable, sustainable and inclusive value chains.</h2></div>
     <div class="prose"><p>{{ site.purpose }}</p><p>Our work brings commercial discipline and farmer development into the same operating rhythm, so every season builds capability, quality and confidence for the next.</p></div>
   </div>
   <div class="container purpose-band">
     <article><p class="eyebrow light">Our purpose</p><p>{{ site.purpose }}</p></article>
     <article class="purpose-band-accent"><p class="eyebrow orange">Our approach</p><p>{{ site.approach }}</p></article>
   </div>
+</section>
+
+<section class="section company-stats-section about-stats">
+  <div class="container section-head"><div><p class="eyebrow orange">Our footprint</p><h2>Scale that starts with people and places.</h2></div><p>These figures are managed as company facts in the backend and can be updated as the business grows.</p></div>
+  <div class="container company-stat-grid">
+    {% for stat in companyStats %}
+      <article class="company-stat-card"><strong>{{ stat.value }}</strong><span>{{ stat.label }}</span>{% if stat.context %}<p>{{ stat.context }}</p>{% endif %}</article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section farmer-voice">
+  <div class="container farmer-voice-inner"><p class="eyebrow orange">A farmer's voice</p><blockquote>“{{ site.farmer_quote }}”</blockquote><p class="farmer-voice-author">— {{ site.farmer_quote_author }}</p></div>
 </section>
 
 <section class="section team-section">

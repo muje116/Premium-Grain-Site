@@ -113,6 +113,55 @@
 .footer-social-empty{color:rgba(255,255,255,.42);font-size:.8rem;line-height:1.5}
 .footer-email{color:var(--lime)!important;font-weight:700}
 
+.model-track{grid-template-columns:repeat(4,minmax(0,1fr))}
+.company-stats-section{background:var(--mist)}
+.company-stat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.company-stat-card{min-height:180px;padding:1.8rem 1.9rem;border-radius:22px;background:#fff;box-shadow:0 12px 35px rgba(5,61,56,.06);display:flex;flex-direction:column;align-items:flex-start}
+.company-stat-card strong{font:800 clamp(2.5rem,5vw,4.8rem)/.95 Manrope,sans-serif;letter-spacing:-.08em;color:var(--forest)}
+.company-stat-card span{margin-top:.8rem;color:var(--orange);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem}
+.company-stat-card p{margin:auto 0 0;color:var(--muted);font-size:.9rem;line-height:1.45}
+.about-stats{background:#fff}
+.farmer-voice{background:var(--forest-deep);color:#fff}
+.farmer-voice-inner{max-width:900px;text-align:center}
+.farmer-voice blockquote{margin:1.2rem auto 1.5rem;font:500 clamp(1.6rem,3.5vw,3rem)/1.2 Manrope,sans-serif;letter-spacing:-.04em;color:#fff}
+.farmer-voice-author{margin:0;color:var(--lime);font-weight:800;letter-spacing:.04em}
+.produce-preview{background:#fff}
+.produce-preview-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.produce-chip{min-height:160px;padding:1.5rem;background:var(--mist);transition:transform .25s ease,background .25s ease}
+.produce-chip:hover{background:#fff;transform:translateY(-4px)}
+.produce-chip>span{color:var(--orange);font-size:.75rem;font-weight:800}
+.produce-chip h3{margin:2.1rem 0 .35rem;font-size:1.05rem;text-transform:uppercase;letter-spacing:.05em}
+.produce-chip p{margin:0;color:var(--muted);font-size:.86rem}
+.produce-detail{background:var(--mist)}
+.produce-detail-intro,.resilience-grid{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:start}
+.produce-detail-intro h2,.resilience-grid h2{max-width:640px}
+.produce-line-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:4rem}
+.produce-line-card{display:grid;grid-template-columns:150px 1fr;min-height:230px;overflow:hidden;border-radius:24px;background:#fff;box-shadow:0 12px 35px rgba(5,61,56,.06)}
+.produce-line-image{background:var(--forest);overflow:hidden}
+.produce-line-image img{width:100%;height:100%;object-fit:cover;object-position:center 70%}
+.produce-line-body{padding:1.7rem 1.8rem 1.9rem}
+.produce-line-body>span{color:var(--orange);font-weight:800}
+.produce-line-body .eyebrow{margin:1rem 0 .45rem;font-size:.64rem}
+.produce-line-body h3{margin:0 0 .55rem;font-size:1.5rem}
+.produce-line-body>p:last-child{margin:0;color:var(--muted);font-size:.92rem;line-height:1.5}
+.trade-route-band{background:var(--forest);color:#fff}
+.trade-route-grid{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}
+.trade-route-grid h2{max-width:700px;color:#fff}
+.trade-route-copy{color:rgba(255,255,255,.72);font-size:1.08rem}
+.trade-route-copy p:last-child{margin-bottom:0}
+.resilience-section{background:#fff}
+.learning-centres-note{background:#fff}
+.learning-centres-note-inner{max-width:860px}
+.learning-centres-note h2{max-width:620px;margin:.6rem 0 1rem}
+.learning-centres-note p:last-child{max-width:760px;margin:0;color:var(--muted);font-size:1.1rem}
+.project-media-section{background:#fff}
+.project-video-card{overflow:hidden;border-radius:28px;background:#021f1c;box-shadow:0 20px 55px rgba(5,61,56,.16)}
+.project-video-card video{display:block;width:100%;max-height:650px;object-fit:cover}
+.project-gallery-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:18px}
+.project-gallery-card{height:230px;margin:0;overflow:hidden;border-radius:20px;background:var(--mist)}
+.project-gallery-card img{width:100%;height:100%;object-fit:cover;object-position:center 70%;transition:transform .45s ease}
+.project-gallery-card:hover img{transform:scale(1.05)}
+
 .bottom-image-cta{position:relative;min-height:470px;overflow:hidden;background:var(--forest-deep);color:#fff}
 .bottom-image-cta-image{position:absolute;inset:-4% 0;width:100%;height:108%;object-fit:cover;transform:scale(1.08);will-change:transform}
 .bottom-image-cta-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,42,38,.9) 0%,rgba(2,42,38,.62) 48%,rgba(2,42,38,.25) 100%),linear-gradient(0deg,rgba(2,42,38,.76),transparent 70%)}
@@ -133,6 +182,11 @@
   .contact-page-grid,.project-journey-grid{grid-template-columns:1fr;gap:3rem}
   .footer-grid{grid-template-columns:repeat(2,1fr)!important}
   .bottom-image-cta-content{margin-inline:auto;padding-top:6rem;padding-bottom:5rem}
+  .company-stat-grid,.produce-preview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .produce-detail-intro,.resilience-grid,.trade-route-grid{grid-template-columns:1fr;gap:2.5rem}
+  .produce-line-grid{grid-template-columns:1fr}
+  .project-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .model-track{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:720px){
   .page-banner,.project-banner{min-height:540px}
@@ -140,7 +194,7 @@
   .page-banner h1,.project-banner h1{font-size:clamp(2.8rem,14vw,4.8rem)}
   .page-banner-mark{min-height:145px;max-width:210px;padding:1.2rem}
   .page-banner-mark span{font-size:3.2rem}
-  .project-grid,.project-focus-grid,.team-grid{grid-template-columns:1fr}
+  .project-grid,.project-focus-grid,.team-grid,.company-stat-grid,.produce-preview-grid,.model-track{grid-template-columns:1fr}
   .project-card-large .project-card-media{height:240px}
   .project-card-large .project-card-body,.project-card-body{padding:1.6rem 1.4rem 1.8rem}
   .team-photo{height:250px}
@@ -150,4 +204,7 @@
   .footer-grid{grid-template-columns:1fr!important;gap:2.3rem!important}
   .bottom-image-cta,.bottom-image-cta-content{min-height:420px}
   .bottom-image-cta-content{padding-top:5rem;padding-bottom:4rem}
+  .produce-line-card{grid-template-columns:1fr}
+  .produce-line-image{height:180px}
+  .project-gallery-grid{grid-template-columns:1fr}
 }

@@ -1,0 +1,29 @@
+title = "Produce & trade"
+url = "/produce"
+layout = "default"
+meta_title = "Produce & trade | Premium Grains Limited"
+meta_description = "Explore the crops, agricultural value chains and market routes developed by Premium Grains Limited."
+is_hidden = 0
+
+[premiumContent]
+pageCode = "produce"
+==
+{% partial 'site/page-banner' tone='forest' index='03' stamp='What we produce' label='Domestic · regional · export' %}
+
+<section class="section produce-detail">
+  <div class="container produce-detail-intro"><div><p class="eyebrow orange">What we produce & trade</p><h2>Value starts in the field and keeps moving.</h2></div><div class="prose"><p>{{ pageContent.intro }}</p><p>Our activities extend from production and aggregation to trading, processing relationships, distribution, market linkage and export.</p></div></div>
+  <div class="container produce-line-grid">
+    {% for line in produceLines %}
+      <article class="produce-line-card">
+        {% if line.image %}<div class="produce-line-image">{% if line.image starts with 'assets/' %}<img src="{{ line.image|theme }}" alt="{{ line.name }}">{% else %}<img src="{{ line.image|media }}" alt="{{ line.name }}">{% endif %}</div>{% endif %}
+        <div class="produce-line-body"><span>{{ '%02d'|format(line.sort_order) }}</span><p class="eyebrow orange">{{ line.descriptor }}</p><h3>{{ line.name }}</h3><p>{{ line.body }}</p></div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section trade-route-band"><div class="container trade-route-grid"><div><p class="eyebrow light">Our value chain</p><h2>Production → Aggregation → Processing & value addition → Sales hubs → Domestic markets → Export markets</h2></div><div class="trade-route-copy"><p>Premium Grains operates two sales hubs as part of its growing commercial distribution and market-access infrastructure.</p><p>Our market strategy connects farmer production and company operations with domestic and regional buyers while expanding opportunities for Malawian agricultural produce.</p></div></div></section>
+
+<section class="section resilience-section"><div class="container resilience-grid"><div><p class="eyebrow orange">Irrigation & climate resilience</p><h2>Make every hectare more productive, resilient and commercially sustainable.</h2></div><div class="prose"><p>The seven irrigation schemes within the Kasiya footprint provide a strategic base for strengthening production resilience. Our long-term approach combines irrigation and water management with soil conservation, manure development, crop diversification, tree planting and climate-smart farming practices.</p></div></div></section>
+
+<section class="section band-cta band-cta-forest"><div class="container band-cta-inner"><div><p class="eyebrow light">Build with us</p><h2>Connect production to the next market.</h2></div><a class="button" href="{{ 'partner'|page }}">Partner with us <span aria-hidden="true">↗</span></a></div></section>

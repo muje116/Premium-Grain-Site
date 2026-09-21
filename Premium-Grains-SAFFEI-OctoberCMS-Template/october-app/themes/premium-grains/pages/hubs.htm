@@ -11,7 +11,7 @@ pageCode = "hubs"
 {% partial 'site/page-banner' tone='mist' index='04' stamp='Produce, learn & scale' label='Malawi' %}
 
 <section class="section hubs-detail">
-  <div class="container hub-intro"><p class="eyebrow">Field presence</p><h2>Practical spaces for learning, production and partnership activation.</h2></div>
+  <div class="container hub-intro"><p class="eyebrow">Field presence</p><h2>Practical spaces for learning, production and partnership activation.</h2><p class="prose">{{ pageContent.intro }}</p></div>
   <div class="container hub-detail-grid">
     {% for hub in farmHubs %}
       <article class="hub-feature {{ hub.accent == 'inverse' ? 'inverse' : '' }}">
@@ -24,6 +24,8 @@ pageCode = "hubs"
   </div>
 </section>
 
-<section class="section hubs-stats"><div class="container stat-row"><div><strong>2</strong><span>farm hubs</span></div><div><strong>4 ha</strong><span>Kasiya demonstration farm</span></div><div><strong>190</strong><span>farmers in the SAFFEI network</span></div></div></section>
+<section class="section hubs-stats"><div class="container stat-row"><div><strong>{{ companyStatsBySlug.sales_hubs.value|default('2') }}</strong><span>{{ companyStatsBySlug.sales_hubs.label|default('sales hubs') }}</span></div><div><strong>{{ companyStatsBySlug.kasiya_footprint.value|default('480+') }}</strong><span>{{ companyStatsBySlug.kasiya_footprint.label|default('hectares in Kasiya') }}</span></div><div><strong>{{ companyStatsBySlug.irrigation_schemes.value|default('7') }}</strong><span>{{ companyStatsBySlug.irrigation_schemes.label|default('irrigation schemes') }}</span></div></div></section>
+
+<section class="section learning-centres-note"><div class="container learning-centres-note-inner"><p class="eyebrow orange">Learning centres & farms</p><h2>See the model in use.</h2><p>{{ site.learning_centres_note }}</p></div></section>
 
 <section class="section band-cta band-cta-forest"><div class="container band-cta-inner"><div><p class="eyebrow light">Projects in motion</p><h2>See how our projects turn field presence into shared value.</h2></div><a class="button" href="{{ 'projects'|page }}">See the projects <span aria-hidden="true">↗</span></a></div></section>
