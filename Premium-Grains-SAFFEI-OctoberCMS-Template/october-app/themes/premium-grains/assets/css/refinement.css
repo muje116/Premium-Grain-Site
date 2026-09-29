@@ -208,3 +208,21 @@
   .produce-line-image{height:180px}
   .project-gallery-grid{grid-template-columns:1fr}
 }
+
+/* Supplied Premium Grains lockups: the dark-background variant anchors dark chrome,
+   while the transparent light-background variant is used on the contact close. */
+.site-header .brand{flex:0 0 124px;width:124px;height:76px;overflow:visible}
+.site-header .brand img{width:100%;height:auto;max-height:76px;object-fit:contain;object-position:center}
+.footer-brand>.brand{flex:0 0 180px;width:180px;height:112px;overflow:visible}
+.footer-brand>.brand img{height:auto;max-height:112px}
+.contact-closer-inner{display:flex;align-items:center;justify-content:center;gap:clamp(2rem,5vw,5rem);text-align:left}
+.contact-closer-logo{width:220px;height:auto;flex:0 0 220px}
+.contact-closer h2{max-width:720px;margin:.5rem 0 0}
+@media(max-width:720px){
+  .site-header .brand{flex-basis:108px;width:108px;height:66px}
+  .site-header .brand img{max-height:66px}
+  .footer-brand>.brand{flex-basis:165px;width:165px;height:103px}
+  .footer-brand>.brand img{height:auto;max-height:103px}
+  .contact-closer-inner{flex-direction:column;gap:1.5rem;text-align:center}
+  .contact-closer-logo{width:180px;flex-basis:180px}
+}
